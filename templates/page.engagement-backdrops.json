@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Engagement Party Backdrops & Banners",
+        "description": "Custom printed engagement party backdrops and celebration banners. Beautiful designs to mark your engagement with personalised touches."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Get Your Engagement Backdrop Quote",
+        "description": "Enter your backdrop size in cm",
+        "price_per_sqm": "20.00",
+        "min_price": "20.00",
+        "show_finishing": true
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "settings": {
+        "heading": "Engagement Designs",
+        "subheading": "Browse our engagement backdrop designs or upload your own artwork."
+      },
+      "blocks": {
+        "d1": { "type": "design", "settings": { "title": "She Said Yes", "description": "Classic celebration design with ring motif", "price": "35.00" } },
+        "d2": { "type": "design", "settings": { "title": "Gold & Rose", "description": "Elegant rose gold and blush tones", "price": "38.00" } },
+        "d3": { "type": "design", "settings": { "title": "Photo Backdrop", "description": "Feature your favourite couple photos", "price": "42.00" } },
+        "d4": { "type": "design", "settings": { "title": "Modern Script", "description": "Stylish calligraphy design", "price": "35.00" } },
+        "d5": { "type": "design", "settings": { "title": "Floral Garden", "description": "Beautiful botanical arrangement", "price": "38.00" } },
+        "d6": { "type": "design", "settings": { "title": "Custom Design", "description": "Upload your own artwork", "price": "28.00" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Perfect For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Engagement party backdrops" } },
+        "u2": { "type": "use", "settings": { "text": "Announcement banners" } },
+        "u3": { "type": "use", "settings": { "text": "Photo booth backgrounds" } },
+        "u4": { "type": "use", "settings": { "text": "Venue decoration" } },
+        "u5": { "type": "use", "settings": { "text": "Social media photo moments" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Engagement Backdrop Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "200 x 100 cm" } },
+        "s2": { "type": "size", "settings": { "size": "200 x 200 cm" } },
+        "s3": { "type": "size", "settings": { "size": "300 x 200 cm" } },
+        "s4": { "type": "size", "settings": { "size": "150 x 200 cm" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Engagement Backdrop FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can I add our names and engagement date?", "answer": "<p>Yes. All designs can be personalised with your names, date, and custom messages.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "What sizes work best for engagement parties?", "answer": "<p>For photo backdrops, 200x200cm or 300x200cm works well. For wall banners, 200x100cm is popular.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "How quickly can I receive my order?", "answer": "<p>Standard turnaround is 2-3 working days. Express options available on request.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Celebrate your engagement in style",
+        "description": "Upload your artwork or get in touch for a personalised design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "designs", "uses", "sizes", "faq", "cta"]
+}

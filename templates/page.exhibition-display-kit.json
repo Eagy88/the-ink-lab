@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Exhibition Display Kits",
+        "description": "Complete exhibition and trade show display solutions. Portable banner stands, backdrops and branded display systems for professional events and conferences."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Get Your Exhibition Kit Quote",
+        "description": "Enter your display size in cm",
+        "price_per_sqm": "28.00",
+        "min_price": "45.00",
+        "show_finishing": false
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "settings": {
+        "heading": "Exhibition Display Options",
+        "subheading": "Choose a display configuration or upload your own branded artwork."
+      },
+      "blocks": {
+        "d1": { "type": "design", "settings": { "title": "Starter Kit", "description": "1 roller banner + table cover", "price": "89.00" } },
+        "d2": { "type": "design", "settings": { "title": "Standard Kit", "description": "2 roller banners + backdrop", "price": "149.00" } },
+        "d3": { "type": "design", "settings": { "title": "Premium Kit", "description": "3 roller banners + backdrop + table cover", "price": "249.00" } },
+        "d4": { "type": "design", "settings": { "title": "Pop-Up Stand", "description": "3x3 curved pop-up display", "price": "299.00" } },
+        "d5": { "type": "design", "settings": { "title": "Shell Scheme Graphics", "description": "Custom panels for shell scheme stands", "price": "120.00" } },
+        "d6": { "type": "design", "settings": { "title": "Custom Package", "description": "Build your own display package", "price": "75.00" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Ideal For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Trade shows and exhibitions" } },
+        "u2": { "type": "use", "settings": { "text": "Conference stands" } },
+        "u3": { "type": "use", "settings": { "text": "Product launches" } },
+        "u4": { "type": "use", "settings": { "text": "Corporate events" } },
+        "u5": { "type": "use", "settings": { "text": "Retail promotions" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Exhibition Kit FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What's included in an exhibition kit?", "answer": "<p>Each kit includes the display hardware and custom printed graphics. Check individual kit options for exact contents.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Are the displays portable?", "answer": "<p>Yes. All our exhibition displays are designed to be lightweight and portable with carry cases included.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "Can I order replacement graphics?", "answer": "<p>Yes. We can print replacement graphics for existing hardware. Just provide the dimensions.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "How quickly can I get an exhibition kit?", "answer": "<p>Standard turnaround is 3-5 working days. Express options available for urgent events.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Stand out at your next exhibition",
+        "description": "Upload your branding or get in touch for a complete display solution.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "designs", "uses", "faq", "cta"]
+}

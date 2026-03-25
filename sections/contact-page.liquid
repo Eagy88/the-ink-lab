@@ -1,0 +1,107 @@
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-page__header">
+      <h1 class="contact-page__title">{{ section.settings.heading }}</h1>
+      <p class="contact-page__desc">{{ section.settings.description }}</p>
+    </div>
+    <div class="contact-page__grid">
+      <div class="contact-page__info">
+        <div class="contact-page__info-card">
+          <div class="contact-page__info-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:{{ settings.phone_number | replace: ' ', '' }}">{{ settings.phone_number }}</a>
+            </div>
+          </div>
+          <div class="contact-page__info-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:{{ settings.email_address }}">{{ settings.email_address }}</a>
+            </div>
+          </div>
+          <div class="contact-page__info-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <strong>Production Hours</strong>
+              <span>{{ settings.opening_hours }}</span>
+              <span class="contact-page__note">Closed weekends and bank holidays</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-page__quick-links">
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="/pages/pvc-banners">PVC Banners</a></li>
+            <li><a href="/pages/mesh-banners">Mesh Banners</a></li>
+            <li><a href="/pages/roller-banners">Roller Banners</a></li>
+            <li><a href="/pages/window-graphics">Window Graphics</a></li>
+            <li><a href="/pages/upload-artwork">Upload Artwork</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact-page__form-card">
+        <h2>Send a Message</h2>
+        {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            <div class="form-success">Thanks for getting in touch! We'll reply shortly.</div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div class="form-errors">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="contact[name]" placeholder="Your name" class="input" required>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="contact[email]" placeholder="Email address" class="input" required>
+            </div>
+            <div class="form-field">
+              <label for="contact-phone">Phone (Optional)</label>
+              <input type="tel" id="contact-phone" name="contact[phone]" placeholder="Phone number" class="input">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="contact[body]" rows="5" placeholder="How can we help?" class="input" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Talk to The Ink Lab"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Need help with sizing, artwork, window graphics or a more specialist display job? Get in touch and we'll point you in the right direction."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact page"
+    }
+  ]
+}
+{% endschema %}

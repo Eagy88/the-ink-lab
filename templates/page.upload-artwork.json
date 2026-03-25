@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "upload": {
+      "type": "upload-form",
+      "settings": {
+        "heading": "Upload Artwork",
+        "description": "Send your file now and we'll match it to your order, or upload first and confirm the print details after."
+      }
+    }
+  },
+  "order": ["upload"]
+}

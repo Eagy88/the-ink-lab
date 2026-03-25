@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Baby Announcement Banners & Signs",
+        "description": "Custom printed baby announcement banners, welcome home signs and newborn celebration displays. Share your joyful news with beautifully personalised prints."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Get Your Baby Announcement Quote",
+        "description": "Enter your banner size in cm",
+        "price_per_sqm": "18.00",
+        "min_price": "15.00",
+        "show_finishing": true
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "settings": {
+        "heading": "Baby Announcement Designs",
+        "subheading": "Browse our adorable baby announcement designs or upload your own artwork."
+      },
+      "blocks": {
+        "d1": { "type": "design", "settings": { "title": "Welcome Baby", "description": "Classic welcome home design with soft pastels", "price": "25.00" } },
+        "d2": { "type": "design", "settings": { "title": "It's a Boy", "description": "Blue themed announcement with stars", "price": "25.00" } },
+        "d3": { "type": "design", "settings": { "title": "It's a Girl", "description": "Pink themed announcement with hearts", "price": "25.00" } },
+        "d4": { "type": "design", "settings": { "title": "Birth Details", "description": "Name, weight, date and time display", "price": "28.00" } },
+        "d5": { "type": "design", "settings": { "title": "Photo Announcement", "description": "Feature your newborn's first photo", "price": "30.00" } },
+        "d6": { "type": "design", "settings": { "title": "Custom Design", "description": "Upload your own artwork", "price": "20.00" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Perfect For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Welcome home from hospital banners" } },
+        "u2": { "type": "use", "settings": { "text": "Newborn photo shoot backdrops" } },
+        "u3": { "type": "use", "settings": { "text": "Birth announcement displays" } },
+        "u4": { "type": "use", "settings": { "text": "Nursery wall decoration" } },
+        "u5": { "type": "use", "settings": { "text": "Family celebration signs" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Baby Announcement Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "100 x 50 cm" } },
+        "s2": { "type": "size", "settings": { "size": "150 x 60 cm" } },
+        "s3": { "type": "size", "settings": { "size": "200 x 100 cm" } },
+        "s4": { "type": "size", "settings": { "size": "150 x 200 cm (backdrop)" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Baby Announcement FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can I add the baby's photo?", "answer": "<p>Yes. Upload a photo and we'll incorporate it into your chosen design. We accept JPG and PNG files.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Can I include birth details?", "answer": "<p>Yes. Add name, date of birth, time, weight and length to any of our designs.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "How quickly can I receive it?", "answer": "<p>Standard turnaround is 2-3 working days. Express next-day options are available for those exciting moments.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "Is it suitable for outdoor use?", "answer": "<p>Yes. Our banners are printed on durable PVC and work perfectly as a front-of-house welcome home sign.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Announce your new arrival in style",
+        "description": "Upload your artwork or contact us for a personalised design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "designs", "uses", "sizes", "faq", "cta"]
+}

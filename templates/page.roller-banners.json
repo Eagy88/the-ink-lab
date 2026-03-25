@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Roller Banner Printing",
+        "description": "Portable display banners for exhibitions, offices, reception areas and events. Choose a size, upload artwork and order fast."
+      }
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Available Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "80 x 200 cm", "note": "Standard" } },
+        "s2": { "type": "size", "settings": { "size": "85 x 200 cm", "note": "Popular" } },
+        "s3": { "type": "size", "settings": { "size": "100 x 200 cm", "note": "Wide" } },
+        "s4": { "type": "size", "settings": { "size": "120 x 200 cm", "note": "Extra wide" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Best For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Trade shows" } },
+        "u2": { "type": "use", "settings": { "text": "Sales presentations" } },
+        "u3": { "type": "use", "settings": { "text": "Indoor events" } },
+        "u4": { "type": "use", "settings": { "text": "Reception branding" } },
+        "u5": { "type": "use", "settings": { "text": "Pop-up promotions" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Order your roller banner today",
+        "description": "Upload your artwork or contact us for help with your design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "sizes", "uses", "cta"]
+}

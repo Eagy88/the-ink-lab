@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "PVC Banner Printing",
+        "description": "A durable, low-cost option for promotions, events, site signage and everyday advertising. Easy to order, custom sized, and available with standard finishing options."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Instant Quote",
+        "description": "Enter sizes in cm for PVC Banners",
+        "price_per_sqm": "15.50",
+        "min_price": "12.00",
+        "show_finishing": true
+      }
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Popular Uses"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Shop front promotions" } },
+        "u2": { "type": "use", "settings": { "text": "Event branding" } },
+        "u3": { "type": "use", "settings": { "text": "Market stalls" } },
+        "u4": { "type": "use", "settings": { "text": "Construction signage" } },
+        "u5": { "type": "use", "settings": { "text": "Local business advertising" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "200 x 100 cm" } },
+        "s2": { "type": "size", "settings": { "size": "300 x 100 cm" } },
+        "s3": { "type": "size", "settings": { "size": "300 x 150 cm" } },
+        "s4": { "type": "size", "settings": { "size": "500 x 100 cm" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "PVC Banner FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What are PVC banners best used for?", "answer": "<p>PVC banners are ideal for shop fronts, events, market stalls, construction sites and general business advertising. They work well indoors and outdoors.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Can I use PVC banners indoors and outdoors?", "answer": "<p>Yes. PVC banners are weather-resistant and durable enough for outdoor use, while also looking sharp for indoor displays.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "How do I upload artwork?", "answer": "<p>Use our Upload Artwork page. We accept PDF, AI, EPS, JPG and PNG files.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "Can I order a custom size?", "answer": "<p>Yes. Enter your exact dimensions in the calculator above and we'll quote accordingly.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to order your PVC banner?",
+        "description": "Upload your artwork or get in touch for a custom quote.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "uses", "sizes", "faq", "cta"]
+}

@@ -1,0 +1,68 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <img src="{{ 'logo-white.png' | asset_url }}" alt="{{ shop.name }}" class="footer__logo-img" loading="lazy">
+        </a>
+        <p class="footer__tagline">Custom printing made simple. Banners, window graphics, backlit displays, stickers and more.</p>
+        {% if settings.phone_number != blank %}
+          <p class="footer__contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {{ settings.phone_number }}
+          </p>
+        {% endif %}
+        {% if settings.email_address != blank %}
+          <p class="footer__contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            {{ settings.email_address }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">Products</h4>
+        <ul class="footer__links">
+          <li><a href="/pages/pvc-banners">PVC Banners</a></li>
+          <li><a href="/pages/mesh-banners">Mesh Banners</a></li>
+          <li><a href="/pages/roller-banners">Roller Banners</a></li>
+          <li><a href="/pages/window-graphics">Window Graphics</a></li>
+          <li><a href="/pages/backlit-graphics">Backlit Graphics</a></li>
+          <li><a href="/pages/stickers-labels">Stickers & Labels</a></li>
+          <li><a href="/pages/birthday-banners">Birthday Banners</a></li>
+          <li><a href="/pages/wedding-backdrops">Wedding Backdrops</a></li>
+          <li><a href="/pages/engagement-backdrops">Engagement Backdrops</a></li>
+          <li><a href="/pages/baby-shower">Baby Shower</a></li>
+          <li><a href="/pages/baby-announcements-backdrop">Baby Announcement</a></li>
+          <li><a href="/pages/exhibition-display-kit">Exhibition Display Kit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="/pages/upload-artwork">Upload Artwork</a></li>
+          <li><a href="/pages/contact">Contact Us</a></li>
+          <li><a href="/pages/contact">Get a Quote</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">Opening Hours</h4>
+        <p class="footer__text">{{ settings.opening_hours | default: 'Monday - Friday: 9am - 5:30pm' }}</p>
+        <p class="footer__text">Closed weekends and bank holidays</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

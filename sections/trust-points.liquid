@@ -1,0 +1,69 @@
+<section class="trust-points">
+  <div class="container">
+    <div class="trust-points__grid">
+      {% for block in section.blocks %}
+        <div class="trust-points__item" {{ block.shopify_attributes }}>
+          <div class="trust-points__icon">
+            {% if block.settings.icon == 'clock' %}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {% elsif block.settings.icon == 'shield' %}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            {% elsif block.settings.icon == 'droplet' %}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            {% elsif block.settings.icon == 'upload' %}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            {% else %}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            {% endif %}
+          </div>
+          <span class="trust-points__text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust points",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Trust point",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "clock", "label": "Clock" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "droplet", "label": "Droplet" },
+            { "value": "upload", "label": "Upload" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Trust point"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust points",
+      "blocks": [
+        { "type": "point", "settings": { "icon": "clock", "text": "Fast turnaround" } },
+        { "type": "point", "settings": { "icon": "shield", "text": "Indoor and outdoor options" } },
+        { "type": "point", "settings": { "icon": "droplet", "text": "White ink and specialist window graphics" } },
+        { "type": "point", "settings": { "icon": "upload", "text": "Easy artwork upload" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

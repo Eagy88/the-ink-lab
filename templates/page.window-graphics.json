@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Window Graphics",
+        "description": "Create bold shopfront branding, privacy effects and inside-glass graphics with clear, frosted and reverse-printed options."
+      }
+    },
+    "types": {
+      "type": "service-types",
+      "settings": {
+        "heading": "What We Offer"
+      },
+      "blocks": {
+        "t1": { "type": "service", "settings": { "title": "Clear window graphics", "description": "Full colour printed graphics applied directly to glass. Ideal for shopfront branding and promotions." } },
+        "t2": { "type": "service", "settings": { "title": "Frosted privacy vinyl", "description": "Simulates etched glass for a professional privacy effect. Popular in salons, offices and clinics." } },
+        "t3": { "type": "service", "settings": { "title": "Reverse printed window decals", "description": "Printed on the adhesive side and applied inside the window. Protected from weather and scratches." } },
+        "t4": { "type": "service", "settings": { "title": "White ink window effects", "description": "Creates striking contrast on clear materials, producing opaque designs that stand out on glass." } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Best For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Salons" } },
+        "u2": { "type": "use", "settings": { "text": "Barbers" } },
+        "u3": { "type": "use", "settings": { "text": "Offices" } },
+        "u4": { "type": "use", "settings": { "text": "Cafés" } },
+        "u5": { "type": "use", "settings": { "text": "Retail units" } },
+        "u6": { "type": "use", "settings": { "text": "Clinics" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5", "u6"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Window Graphics FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What types of window graphics do you offer?", "answer": "<p>We offer clear window graphics, frosted privacy vinyl, reverse printed window decals and white ink window effects.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Can window graphics be applied inside the glass?", "answer": "<p>Yes. Reverse printed decals are designed to be applied from the inside, protecting them from weather and wear.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "What is white ink printing?", "answer": "<p>White ink allows us to print opaque white onto clear or coloured materials, creating stronger contrast and more striking designs on glass.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Need window graphics?",
+        "description": "Upload your artwork or get in touch to discuss your project.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "types", "uses", "faq", "cta"]
+}

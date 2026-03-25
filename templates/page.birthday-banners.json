@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Birthday Banners & Backdrops",
+        "description": "Custom printed birthday banners, party backdrops and celebration displays. Personalised designs for milestone birthdays, children's parties and surprise celebrations."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Get Your Birthday Banner Quote",
+        "description": "Enter your banner size in cm",
+        "price_per_sqm": "18.00",
+        "min_price": "15.00",
+        "show_finishing": true
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "settings": {
+        "heading": "Birthday Designs",
+        "subheading": "Choose from our ready-made birthday designs or upload your own personalised artwork."
+      },
+      "blocks": {
+        "d1": { "type": "design", "settings": { "title": "Classic Birthday", "description": "Bold text with balloons and confetti", "price": "25.00" } },
+        "d2": { "type": "design", "settings": { "title": "Milestone Birthday", "description": "18th, 21st, 30th, 40th, 50th and more", "price": "25.00" } },
+        "d3": { "type": "design", "settings": { "title": "Kids Party", "description": "Fun colourful designs for children", "price": "25.00" } },
+        "d4": { "type": "design", "settings": { "title": "Photo Birthday Banner", "description": "Add your own photos to the design", "price": "30.00" } },
+        "d5": { "type": "design", "settings": { "title": "Gold & Black", "description": "Elegant design for adult celebrations", "price": "28.00" } },
+        "d6": { "type": "design", "settings": { "title": "Custom Design", "description": "Upload your own artwork", "price": "20.00" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Perfect For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Milestone birthdays (18th, 21st, 30th, 50th)" } },
+        "u2": { "type": "use", "settings": { "text": "Children's birthday parties" } },
+        "u3": { "type": "use", "settings": { "text": "Surprise celebrations" } },
+        "u4": { "type": "use", "settings": { "text": "Party venue decoration" } },
+        "u5": { "type": "use", "settings": { "text": "Photo backdrop displays" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Birthday Banner Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "200 x 60 cm" } },
+        "s2": { "type": "size", "settings": { "size": "200 x 100 cm" } },
+        "s3": { "type": "size", "settings": { "size": "300 x 100 cm" } },
+        "s4": { "type": "size", "settings": { "size": "150 x 200 cm (backdrop)" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Birthday Banner FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can I personalise my birthday banner?", "answer": "<p>Yes. Add names, ages, photos and your own message. Upload your artwork or choose one of our ready-made designs and we'll personalise it for you.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "How long does delivery take?", "answer": "<p>Standard production is 2-3 working days. Express next-day options are available on request.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "Can I use it outdoors?", "answer": "<p>Yes. Our birthday banners are printed on durable PVC and are suitable for indoor and outdoor use.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "What finishing options are available?", "answer": "<p>Choose from eyelets, hem and eyelets, or pole pockets depending on how you plan to hang your banner.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to order your birthday banner?",
+        "description": "Upload your artwork or get in touch for a personalised design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "designs", "uses", "sizes", "faq", "cta"]
+}

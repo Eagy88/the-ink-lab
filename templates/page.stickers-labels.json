@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Stickers & Labels",
+        "description": "Custom printed stickers for products, packaging, promotions, windows and branded spaces. Available in gloss, matt and contour-cut styles."
+      }
+    },
+    "types": {
+      "type": "service-types",
+      "settings": {
+        "heading": "Sticker Types"
+      },
+      "blocks": {
+        "t1": { "type": "service", "settings": { "title": "Product labels", "description": "Professional labels for bottles, jars, packaging and retail products." } },
+        "t2": { "type": "service", "settings": { "title": "Promo stickers", "description": "Custom branded stickers for marketing, giveaways and events." } },
+        "t3": { "type": "service", "settings": { "title": "Window stickers", "description": "Applied to glass for shopfront promotions and branding." } },
+        "t4": { "type": "service", "settings": { "title": "Wall decals", "description": "Interior graphics for offices, retail and branded spaces." } },
+        "t5": { "type": "service", "settings": { "title": "Contour-cut shapes", "description": "Custom die-cut stickers shaped to your design." } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to order stickers?",
+        "description": "Upload your artwork or get in touch to discuss your sticker project.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "types", "cta"]
+}

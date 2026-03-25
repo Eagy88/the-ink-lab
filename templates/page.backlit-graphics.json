@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Backlit Graphics",
+        "description": "Illuminated graphics for lightboxes, retail displays, menus and branded interiors. Designed to look sharp and vibrant when lit from behind."
+      }
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Best For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Retail lightboxes" } },
+        "u2": { "type": "use", "settings": { "text": "Menu displays" } },
+        "u3": { "type": "use", "settings": { "text": "Salon or clinic signage" } },
+        "u4": { "type": "use", "settings": { "text": "Exhibition stands" } },
+        "u5": { "type": "use", "settings": { "text": "Illuminated branding" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Backlit Graphics FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What are backlit graphics?", "answer": "<p>Backlit graphics are printed on translucent material designed to be illuminated from behind, creating vibrant and eye-catching displays.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "What sizes can you produce?", "answer": "<p>We can produce custom sizes to fit your lightbox. Get in touch with your dimensions for a quote.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "How do I order backlit graphics?", "answer": "<p>Contact us with your lightbox dimensions and upload your artwork. We'll confirm the spec and get your order started.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Need backlit graphics?",
+        "description": "Get in touch with your lightbox dimensions and we'll provide a custom quote.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "uses", "faq", "cta"]
+}

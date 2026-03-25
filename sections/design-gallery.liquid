@@ -1,0 +1,112 @@
+<section class="design-gallery" id="choose-design">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="section-subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+    <div class="design-gallery__grid">
+      {% for block in section.blocks %}
+        <div class="design-gallery__item" {{ block.shopify_attributes }}>
+          <button class="design-gallery__card" data-design-id="{{ block.id }}" data-design-name="{{ block.settings.title }}" aria-label="Select {{ block.settings.title }}">
+            {% if block.settings.image != blank %}
+              <div class="design-gallery__image">
+                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+              </div>
+            {% elsif block.settings.fallback_asset != blank %}
+              <div class="design-gallery__image">
+                <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+              </div>
+            {% else %}
+              <div class="design-gallery__image design-gallery__image--placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            {% endif %}
+            <div class="design-gallery__info">
+              <h3 class="design-gallery__title">{{ block.settings.title }}</h3>
+              {% if block.settings.description != blank %}
+                <p class="design-gallery__desc">{{ block.settings.description }}</p>
+              {% endif %}
+              {% if block.settings.price != blank %}
+                <span class="design-gallery__price">From &pound;{{ block.settings.price }}</span>
+              {% endif %}
+            </div>
+            <div class="design-gallery__select">
+              <span class="design-gallery__check">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="design-gallery__select-text">Select this design</span>
+            </div>
+          </button>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="design-gallery__selected" id="design-selected" style="display:none">
+      <div class="design-gallery__selected-inner">
+        <p><strong>Selected design:</strong> <span id="design-selected-name"></span></p>
+        <a href="/pages/upload-artwork" class="btn btn--primary btn--lg">Upload Your Artwork &rarr;</a>
+        <p class="design-gallery__or">or send your own design with your order</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Design gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Choose a Design"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Browse our ready-made designs or upload your own artwork."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "design",
+      "name": "Design option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Design"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Starting price"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Design image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Fallback asset filename"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Design gallery"
+    }
+  ]
+}
+{% endschema %}

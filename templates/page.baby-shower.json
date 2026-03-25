@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Baby Shower Backdrops & Banners",
+        "description": "Adorable custom printed baby shower backdrops and celebration banners. Sweet personalised designs for welcoming your little one."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Get Your Baby Shower Backdrop Quote",
+        "description": "Enter your backdrop size in cm",
+        "price_per_sqm": "18.00",
+        "min_price": "18.00",
+        "show_finishing": true
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "settings": {
+        "heading": "Baby Shower Designs",
+        "subheading": "Browse our sweet baby shower designs or upload your own artwork."
+      },
+      "blocks": {
+        "d1": { "type": "design", "settings": { "title": "It's a Boy", "description": "Blue themed with clouds and stars", "price": "28.00" } },
+        "d2": { "type": "design", "settings": { "title": "It's a Girl", "description": "Pink themed with butterflies and flowers", "price": "28.00" } },
+        "d3": { "type": "design", "settings": { "title": "Gender Neutral", "description": "Soft pastels with woodland animals", "price": "28.00" } },
+        "d4": { "type": "design", "settings": { "title": "Oh Baby", "description": "Modern gold script on soft background", "price": "30.00" } },
+        "d5": { "type": "design", "settings": { "title": "Twinkle Star", "description": "Stars and moon dreamy design", "price": "30.00" } },
+        "d6": { "type": "design", "settings": { "title": "Custom Design", "description": "Upload your own artwork", "price": "22.00" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Perfect For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Baby shower party backdrops" } },
+        "u2": { "type": "use", "settings": { "text": "Gender reveal celebrations" } },
+        "u3": { "type": "use", "settings": { "text": "Welcome baby banners" } },
+        "u4": { "type": "use", "settings": { "text": "Nursery photo backgrounds" } },
+        "u5": { "type": "use", "settings": { "text": "Table and venue decoration" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Baby Shower Backdrop Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "150 x 100 cm" } },
+        "s2": { "type": "size", "settings": { "size": "200 x 100 cm" } },
+        "s3": { "type": "size", "settings": { "size": "200 x 200 cm" } },
+        "s4": { "type": "size", "settings": { "size": "300 x 200 cm" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Baby Shower Backdrop FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can I add the baby's name?", "answer": "<p>Yes. Personalise any design with names, dates and custom messages.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Do you have gender reveal designs?", "answer": "<p>Yes. We have both 'Boy or Girl?' reveal designs and individual 'It's a Boy/Girl' celebration banners.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "Can I reuse the backdrop?", "answer": "<p>Yes. Our banners are durable PVC and can be stored flat and reused for future events.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Create the perfect baby shower backdrop",
+        "description": "Upload your artwork or contact us for a custom design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "designs", "uses", "sizes", "faq", "cta"]
+}

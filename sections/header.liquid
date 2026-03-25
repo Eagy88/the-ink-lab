@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="container header__inner">
+    <div class="header__spacer"></div>
+    <a href="/" class="header__logo">
+      {% if section.settings.logo != blank %}
+        <img src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}" class="header__logo-img" loading="eager">
+      {% else %}
+        <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" class="header__logo-img" loading="eager">
+      {% endif %}
+    </a>
+    <div class="header__actions">
+      <a href="/pages/contact" class="btn btn--primary btn--sm">Get Quote</a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

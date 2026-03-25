@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "contact": {
+      "type": "contact-page",
+      "settings": {
+        "heading": "Talk to The Ink Lab",
+        "description": "Need help with sizing, artwork, window graphics or a more specialist display job? Get in touch and we'll point you in the right direction."
+      }
+    }
+  },
+  "order": ["contact"]
+}

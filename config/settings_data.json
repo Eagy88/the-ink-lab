@@ -1,0 +1,27 @@
+{
+  "current": {
+    "color_primary": "#0EA5E9",
+    "color_primary_dark": "#0284C7",
+    "color_background": "#FFFFFF",
+    "color_text": "#1E293B",
+    "color_text_light": "#64748B",
+    "color_dark_bg": "#0F172A",
+    "color_dark_card": "#1E293B",
+    "phone_number": "0800 123 4567",
+    "email_address": "hello@theinklab.co.uk",
+    "opening_hours": "Monday - Friday: 9am - 5:30pm",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer"
+      },
+      "announcement-bar": {
+        "type": "announcement-bar"
+      }
+    },
+    "content_for_index": []
+  }
+}

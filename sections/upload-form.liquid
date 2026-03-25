@@ -1,0 +1,127 @@
+<section class="upload-form">
+  <div class="container">
+    <div class="upload-form__header">
+      <h1 class="upload-form__title">{{ section.settings.heading }}</h1>
+      <p class="upload-form__desc">{{ section.settings.description }}</p>
+    </div>
+    <div class="upload-form__grid">
+      <div class="upload-form__info">
+        <div class="upload-form__formats">
+          <h3>Accepted file formats</h3>
+          <div class="upload-form__format-tags">
+            <span class="tag">PDF</span>
+            <span class="tag">AI</span>
+            <span class="tag">EPS</span>
+            <span class="tag">JPG</span>
+            <span class="tag">PNG</span>
+          </div>
+        </div>
+        <div class="upload-form__steps">
+          <h3>How it works</h3>
+          <ol class="upload-form__steps-list">
+            <li>Fill in the form with your details and order info</li>
+            <li>Attach your artwork file(s)</li>
+            <li>Click "Send Artwork" — this opens your email with everything ready</li>
+            <li>We'll confirm receipt and get your order into production</li>
+          </ol>
+        </div>
+        <p class="upload-form__help">Need design help? <a href="/pages/contact">Get in touch</a> and we can point you in the right direction.</p>
+      </div>
+      <div class="upload-form__card">
+        <div class="upload-form__form" id="artwork-form">
+          <div class="form-field">
+            <label for="upload-name">Your name</label>
+            <input type="text" id="upload-name" placeholder="Your full name" class="input" required>
+          </div>
+
+          <div class="form-field">
+            <label for="upload-email">Email address</label>
+            <input type="email" id="upload-email" placeholder="you@example.com" class="input" required>
+          </div>
+
+          <div class="form-field">
+            <label for="upload-business">Business name</label>
+            <input type="text" id="upload-business" placeholder="Your business name" class="input">
+          </div>
+
+          <div class="form-field">
+            <label for="upload-order">Order or quote reference (if you have one)</label>
+            <input type="text" id="upload-order" placeholder="e.g. INK-1234" class="input">
+          </div>
+
+          <div class="form-field">
+            <label for="upload-product">What product is this artwork for?</label>
+            <select id="upload-product" class="input">
+              <option value="">Select a product...</option>
+              <option value="PVC Banner">PVC Banner</option>
+              <option value="Mesh Banner">Mesh Banner</option>
+              <option value="Roller Banner">Roller Banner</option>
+              <option value="Window Graphics">Window Graphics</option>
+              <option value="Backlit Graphics">Backlit Graphics</option>
+              <option value="Stickers & Labels">Stickers & Labels</option>
+              <option value="Birthday Banner">Birthday Banner</option>
+              <option value="Wedding Backdrop">Wedding Backdrop</option>
+              <option value="Engagement Backdrop">Engagement Backdrop</option>
+              <option value="Baby Shower">Baby Shower</option>
+              <option value="Baby Announcement">Baby Announcement</option>
+              <option value="Exhibition Display Kit">Exhibition Display Kit</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="upload-width">Width (cm)</label>
+              <input type="number" id="upload-width" placeholder="e.g. 200" class="input">
+            </div>
+            <div class="form-field">
+              <label for="upload-height">Height (cm)</label>
+              <input type="number" id="upload-height" placeholder="e.g. 100" class="input">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="upload-qty">Quantity</label>
+            <input type="number" id="upload-qty" placeholder="e.g. 1" min="1" class="input">
+          </div>
+
+          <div class="form-field">
+            <label for="upload-notes">Additional notes</label>
+            <textarea id="upload-notes" rows="4" placeholder="Any details about finishing, materials, delivery dates..." class="input"></textarea>
+          </div>
+
+          <a href="#" id="artwork-send-btn" class="btn btn--primary btn--lg upload-form__submit-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Send Artwork via Email
+          </a>
+          <p class="upload-form__note">This will open your email app with the details filled in. Just attach your artwork file(s) and hit send.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Upload form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Upload Artwork"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Send your file now and we'll match it to your order, or upload first and confirm the print details after."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Upload form"
+    }
+  ]
+}
+{% endschema %}

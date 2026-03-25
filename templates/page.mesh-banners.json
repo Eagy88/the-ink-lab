@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Mesh Banner Printing",
+        "description": "Ideal for fences, scaffolding and exposed outdoor areas where airflow matters. A smart choice for larger external graphics and site branding."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Instant Quote",
+        "description": "Enter sizes in cm for Mesh Banners",
+        "price_per_sqm": "18.00",
+        "min_price": "15.00",
+        "show_finishing": true
+      }
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Best For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Scaffold branding" } },
+        "u2": { "type": "use", "settings": { "text": "Fence banners" } },
+        "u3": { "type": "use", "settings": { "text": "Sports grounds" } },
+        "u4": { "type": "use", "settings": { "text": "Building exteriors" } },
+        "u5": { "type": "use", "settings": { "text": "Event perimeters" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "200 x 100 cm" } },
+        "s2": { "type": "size", "settings": { "size": "300 x 100 cm" } },
+        "s3": { "type": "size", "settings": { "size": "300 x 150 cm" } },
+        "s4": { "type": "size", "settings": { "size": "500 x 100 cm" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to order your mesh banner?",
+        "description": "Upload your artwork or get in touch for a custom quote.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "uses", "sizes", "cta"]
+}

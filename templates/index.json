@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "badge_text": "Premium Trade Print Quality",
+        "heading": "Print that's easy to order and made to stand out.",
+        "subheading": "Custom banners, window graphics, backlit displays, stickers and event printing with fast quotes and simple ordering.",
+        "button_1_text": "Get Instant Quote",
+        "button_1_link": "/pages/contact",
+        "button_2_text": "",
+        "button_2_link": ""
+      }
+    },
+    "trust_points": {
+      "type": "trust-points",
+      "blocks": {
+        "fast": { "type": "point", "settings": { "icon": "clock", "text": "Fast turnaround" } },
+        "options": { "type": "point", "settings": { "icon": "shield", "text": "Indoor and outdoor options" } },
+        "white_ink": { "type": "point", "settings": { "icon": "droplet", "text": "White ink and specialist window graphics" } },
+        "upload": { "type": "point", "settings": { "icon": "upload", "text": "Easy artwork upload" } }
+      },
+      "block_order": ["fast", "options", "white_ink", "upload"]
+    },
+    "products": {
+      "type": "product-grid",
+      "settings": {
+        "heading": "Our Products"
+      },
+      "blocks": {
+        "pvc": { "type": "product_card", "settings": { "title": "PVC Banners", "description": "Durable outdoor and indoor banners", "link": "/pages/pvc-banners", "fallback_asset": "product-pvc-banners.png" } },
+        "mesh": { "type": "product_card", "settings": { "title": "Mesh Banners", "description": "Wind-resistant large format banners", "link": "/pages/mesh-banners", "fallback_asset": "product-mesh-banners.png" } },
+        "roller": { "type": "product_card", "settings": { "title": "Roller Banners", "description": "Portable event displays", "link": "/pages/roller-banners", "fallback_asset": "product-roller-banners.png" } },
+        "window": { "type": "product_card", "settings": { "title": "Window Graphics", "description": "Frosted, clear and reverse printed", "link": "/pages/window-graphics", "fallback_asset": "product-window-graphics.png" } },
+        "backlit": { "type": "product_card", "settings": { "title": "Backlit Graphics", "description": "Illuminated lightbox displays", "link": "/pages/backlit-graphics", "fallback_asset": "product-backlit-graphics.png" } },
+        "stickers": { "type": "product_card", "settings": { "title": "Stickers & Labels", "description": "Custom cut stickers and labels", "link": "/pages/stickers-labels", "fallback_asset": "product-stickers-labels.png" } },
+        "birthday": { "type": "product_card", "settings": { "title": "Birthday Banners", "description": "Personalised birthday celebration banners", "link": "/pages/birthday-banners", "fallback_asset": "product-birthday.png" } },
+        "wedding": { "type": "product_card", "settings": { "title": "Wedding Backdrops", "description": "Elegant custom wedding backdrops", "link": "/pages/wedding-backdrops", "fallback_asset": "product-wedding.png" } },
+        "engagement": { "type": "product_card", "settings": { "title": "Engagement Backdrops", "description": "Beautiful engagement party displays", "link": "/pages/engagement-backdrops", "fallback_asset": "product-engagement.png" } },
+        "baby": { "type": "product_card", "settings": { "title": "Baby Shower", "description": "Sweet baby shower backdrops and banners", "link": "/pages/baby-shower", "fallback_asset": "product-baby.png" } },
+        "exhibition": { "type": "product_card", "settings": { "title": "Exhibition Display Kit", "description": "Complete trade show display solutions", "link": "/pages/exhibition-display-kit", "fallback_asset": "product-exhibition.png" } },
+        "baby_announcement": { "type": "product_card", "settings": { "title": "Baby Announcement", "description": "Beautiful newborn arrival banners and signs", "link": "/pages/baby-announcements-backdrop", "fallback_asset": "product-baby-announcement.png" } }
+      },
+      "block_order": ["pvc", "mesh", "roller", "window", "backlit", "stickers", "birthday", "wedding", "engagement", "baby", "baby_announcement", "exhibition"]
+    },
+    "features": {
+      "type": "features-grid",
+      "settings": {
+        "heading": "What we can print for you"
+      },
+      "blocks": {
+        "window": { "type": "feature", "settings": { "icon": "window", "title": "Window graphics", "description": "Clear, frosted and inside-glass designs for shops, offices and branded spaces." } },
+        "backlit": { "type": "feature", "settings": { "icon": "sun", "title": "Backlit displays", "description": "Lightbox and illuminated graphics for retail, hospitality and event environments." } },
+        "white_ink": { "type": "feature", "settings": { "icon": "droplet", "title": "White ink effects", "description": "Premium print options for clear materials, layered graphics and stronger contrast." } },
+        "indoor": { "type": "feature", "settings": { "icon": "home", "title": "Indoor-safe graphics", "description": "A strong fit for interiors, public-facing spaces and branded environments." } },
+        "outdoor": { "type": "feature", "settings": { "icon": "flag", "title": "Outdoor banners and signage", "description": "Durable options for events, construction, retail and day-to-day promotion." } },
+        "walls": { "type": "feature", "settings": { "icon": "layers", "title": "Walls, posters and promotional print", "description": "A wider range of print products from one supplier." } }
+      },
+      "block_order": ["window", "backlit", "white_ink", "indoor", "outdoor", "walls"]
+    },
+    "starter_kit": {
+      "type": "starter-kit",
+      "settings": {
+        "heading": "Starter Business Kit",
+        "button_text": "Get a Quote",
+        "button_link": "/pages/contact"
+      },
+      "blocks": {
+        "item1": { "type": "item", "settings": { "text": "2 PVC banners" } },
+        "item2": { "type": "item", "settings": { "text": "1 roller banner" } },
+        "item3": { "type": "item", "settings": { "text": "250 stickers" } },
+        "item4": { "type": "item", "settings": { "text": "Upload artwork included" } }
+      },
+      "block_order": ["item1", "item2", "item3", "item4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What banner material should I choose?", "answer": "<p>PVC banners are best for most everyday use. Choose mesh for windy or exposed locations, and roller banners for indoor events and exhibitions.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Can I upload my own artwork?", "answer": "<p>Yes. We accept PDF, AI, EPS, JPG and PNG files. Upload through our artwork page or email directly.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "Do you print window graphics?", "answer": "<p>Yes. We offer clear window graphics, frosted privacy vinyl, reverse printed window decals and white ink window effects.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "Can you produce backlit graphics?", "answer": "<p>Yes. We produce illuminated graphics for lightboxes, menu displays, retail signage and exhibition stands.</p>" } },
+        "q5": { "type": "question", "settings": { "question": "Are your prints suitable for indoor use?", "answer": "<p>Yes. Our prints are suitable for retail, offices and public-facing interiors.</p>" } },
+        "q6": { "type": "question", "settings": { "question": "How fast can you turn orders around?", "answer": "<p>Standard turnaround is 2-3 working days. Express options are available on request.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+    }
+  },
+  "order": ["hero", "trust_points", "products", "features", "starter_kit", "faq"]
+}

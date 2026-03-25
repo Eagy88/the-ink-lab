@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Wedding Backdrops & Banners",
+        "description": "Elegant custom printed wedding backdrops, ceremony banners and reception displays. Beautiful personalised designs for your special day."
+      }
+    },
+    "calculator": {
+      "type": "quote-calculator",
+      "settings": {
+        "heading": "Get Your Wedding Backdrop Quote",
+        "description": "Enter your backdrop size in cm",
+        "price_per_sqm": "22.00",
+        "min_price": "25.00",
+        "show_finishing": true
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "settings": {
+        "heading": "Wedding Designs",
+        "subheading": "Browse our elegant wedding backdrop designs or upload your own bespoke artwork."
+      },
+      "blocks": {
+        "d1": { "type": "design", "settings": { "title": "Classic Floral", "description": "Soft floral design with elegant typography", "price": "45.00" } },
+        "d2": { "type": "design", "settings": { "title": "Modern Minimalist", "description": "Clean lines and contemporary style", "price": "40.00" } },
+        "d3": { "type": "design", "settings": { "title": "Gold & White", "description": "Luxurious metallic effect design", "price": "50.00" } },
+        "d4": { "type": "design", "settings": { "title": "Rustic Botanical", "description": "Natural greenery and earth tones", "price": "45.00" } },
+        "d5": { "type": "design", "settings": { "title": "Photo Backdrop", "description": "Incorporate your engagement photos", "price": "55.00" } },
+        "d6": { "type": "design", "settings": { "title": "Custom Design", "description": "Upload your own artwork", "price": "35.00" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Perfect For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Ceremony backdrops" } },
+        "u2": { "type": "use", "settings": { "text": "Reception decoration" } },
+        "u3": { "type": "use", "settings": { "text": "Photo booth backgrounds" } },
+        "u4": { "type": "use", "settings": { "text": "Welcome signs and table plans" } },
+        "u5": { "type": "use", "settings": { "text": "Venue branding" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"]
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "settings": {
+        "heading": "Popular Wedding Backdrop Sizes"
+      },
+      "blocks": {
+        "s1": { "type": "size", "settings": { "size": "200 x 200 cm" } },
+        "s2": { "type": "size", "settings": { "size": "250 x 200 cm" } },
+        "s3": { "type": "size", "settings": { "size": "300 x 200 cm" } },
+        "s4": { "type": "size", "settings": { "size": "400 x 200 cm" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Wedding Backdrop FAQ"
+      },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can I personalise the backdrop with our names and date?", "answer": "<p>Yes. All our wedding designs can be personalised with your names, wedding date, and custom messages.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "What material are wedding backdrops printed on?", "answer": "<p>Our wedding backdrops are printed on premium PVC banner material for a smooth, professional finish. Fabric options available on request.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "How do I hang the backdrop?", "answer": "<p>We can add eyelets, pole pockets, or hem finishing. Most venues use a simple frame or stand which we can advise on.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "How far in advance should I order?", "answer": "<p>We recommend ordering at least 2 weeks before your wedding. Rush orders are available for an additional fee.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Create your perfect wedding backdrop",
+        "description": "Upload your design or contact us for a bespoke quote.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "calculator", "designs", "uses", "sizes", "faq", "cta"]
+}
