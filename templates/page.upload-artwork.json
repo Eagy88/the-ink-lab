@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "upload": {
+      "type": "upload-form",
+      "settings": {
+        "heading": "Upload Artwork",
+        "description": "Send your file now and we'll match it to your order, or upload first and confirm the print details after."
+      }
+    },
+    "add_ons": {
+      "type": "add-ons",
+      "settings": {
+        "heading": "Optional Extras & Design Services",
+        "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
+        "product_handle": "add-on-services",
+        "button_text": "Add to basket",
+        "note": "Add-ons are optional and added separately to your basket."
+      }
+    }
+  },
+  "order": [
+    "upload",
+    "add_ons"
+  ]
+}

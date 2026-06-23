@@ -1,0 +1,213 @@
+<section class="featured-buy">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="featured-buy__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="featured-buy__subtitle">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    <div class="featured-buy__grid">
+      {%- for block in section.blocks -%}
+        {%- assign product = all_products[block.settings.product_handle] -%}
+        {%- assign chosen = blank -%}
+        {%- if product != blank and product.id != blank -%}
+          {%- if block.settings.variant_title != blank -%}
+            {%- for v in product.variants -%}
+              {%- if v.title == block.settings.variant_title -%}
+                {%- assign chosen = v -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- assign chosen = product.variants.first -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        <div class="featured-buy__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.badge != blank -%}
+            <span class="featured-buy__badge">{{ block.settings.badge }}</span>
+          {%- endif -%}
+
+          <div class="featured-buy__image">
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.label | default: product.title }}" loading="lazy" width="600" height="400">
+            {%- elsif block.settings.fallback_asset != blank -%}
+              <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.label | default: product.title }}" loading="lazy" width="600" height="400">
+            {%- elsif chosen != blank and chosen.image != blank -%}
+              <img src="{{ chosen.image | image_url: width: 600 }}" alt="{{ block.settings.label | default: product.title }}" loading="lazy" width="600" height="400">
+            {%- elsif product != blank and product.featured_image != blank -%}
+              <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ block.settings.label | default: product.title }}" loading="lazy" width="600" height="400">
+            {%- else -%}
+              <div class="featured-buy__image--placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="featured-buy__body">
+            <h3 class="featured-buy__name">{{ block.settings.label | default: product.title | default: 'Product' }}</h3>
+            {%- if block.settings.description != blank -%}
+              <p class="featured-buy__desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+
+            {%- if chosen != blank -%}
+              <div class="featured-buy__price-row">
+                {%- if chosen.compare_at_price > chosen.price -%}
+                  <span class="featured-buy__was">{{ chosen.compare_at_price | money }}</span>
+                {%- endif -%}
+                <span class="featured-buy__price">{{ chosen.price | money }}</span>
+                {%- if block.settings.price_suffix != blank -%}
+                  <span class="featured-buy__suffix">{{ block.settings.price_suffix }}</span>
+                {%- endif -%}
+              </div>
+              {%- if chosen.available -%}
+                <button type="button"
+                  class="btn btn--primary featured-buy__add js-add-to-cart"
+                  data-variant-id="{{ chosen.id }}"
+                  data-variant-title="{{ product.title | append: ' — ' | append: chosen.title | escape }}">
+                  {{ block.settings.button_text | default: 'Add to basket' }}
+                </button>
+              {%- else -%}
+                <button type="button" class="btn featured-buy__add" disabled>Sold out</button>
+              {%- endif -%}
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="featured-buy__more">See full details &rarr;</a>
+              {%- endif -%}
+            {%- else -%}
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="btn btn--outline featured-buy__add">{{ block.settings.fallback_button | default: 'View options' }}</a>
+              {%- endif -%}
+              {%- if request.design_mode -%}
+                {%- if product == blank or product.id == blank -%}
+                  <p class="featured-buy__placeholder">No product found for handle <strong>{{ block.settings.product_handle }}</strong>. Create it in Shopify, then this card sells automatically.</p>
+                {%- elsif block.settings.variant_title != blank -%}
+                  <p class="featured-buy__placeholder">Variant <strong>{{ block.settings.variant_title }}</strong> not found on <strong>{{ block.settings.product_handle }}</strong>. Check the variant name matches exactly.</p>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <p class="featured-buy__note">{{ section.settings.note }}</p>
+    {%- endif -%}
+    {%- if section.settings.view_all_link != blank and section.settings.view_all_text != blank -%}
+      <a href="{{ section.settings.view_all_link }}" class="featured-buy__viewall">{{ section.settings.view_all_text }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured buy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Buy Now"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Ready to order. Pay securely, then upload your artwork."
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note under cards"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View-all link text"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View-all link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Buy card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_handle",
+          "label": "Shopify product handle",
+          "info": "The product this card adds to the basket (e.g. premium-roller-banner)."
+        },
+        {
+          "type": "text",
+          "id": "variant_title",
+          "label": "Variant to sell (optional)",
+          "info": "Exact variant name, e.g. '2m x 1m' or '1 Roller Banner'. Leave blank to use the first variant."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Card title (optional)",
+          "info": "Overrides the product title shown on the card."
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Short description"
+        },
+        {
+          "type": "text",
+          "id": "price_suffix",
+          "label": "Price suffix (optional)",
+          "info": "e.g. 'per banner'"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Fallback image filename",
+          "info": "Theme asset used if no image is chosen, e.g. product-roller-banners.png"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge text (optional)",
+          "info": "e.g. 'Best seller'"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Add to basket"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Details / fallback link",
+          "info": "Shown as 'See full details'. Also used as a fallback button if the product isn't set up yet."
+        },
+        {
+          "type": "text",
+          "id": "fallback_button",
+          "label": "Fallback button text",
+          "default": "View options"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured buy"
+    }
+  ]
+}
+{% endschema %}

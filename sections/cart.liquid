@@ -1,0 +1,65 @@
+<section class="cart-page">
+  <div class="container">
+    <h1 class="cart-page__title">{{ section.settings.heading }}</h1>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-form">
+        <div class="cart-items">
+          {%- for item in cart.items -%}
+            <div class="cart-item">
+              <div class="cart-item__info">
+                <span class="cart-item__title">{{ item.product.title }}</span>
+                {%- unless item.variant.title contains 'Default' -%}
+                  <span class="cart-item__variant">Size: {{ item.variant.title }}</span>
+                {%- endunless -%}
+                {%- for p in item.properties -%}
+                  {%- unless p.last == blank or p.first == '_artwork' -%}
+                    <span class="cart-item__prop">{{ p.first }}: {{ p.last }}</span>
+                  {%- endunless -%}
+                {%- endfor -%}
+                <a href="{{ item.url_to_remove }}" class="cart-item__remove">Remove</a>
+              </div>
+              <div class="cart-item__qty">
+                <label class="cart-item__qty-label" for="qty-{{ forloop.index }}">Qty</label>
+                <input type="number" id="qty-{{ forloop.index }}" name="updates[]" value="{{ item.quantity }}" min="0" class="input cart-item__qty-input">
+              </div>
+              <span class="cart-item__price">{{ item.final_line_price | money }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="cart-summary">
+          <div class="cart-summary__row">
+            <span class="cart-summary__label">Subtotal</span>
+            <span class="cart-summary__total">{{ cart.total_price | money }}</span>
+          </div>
+          <p class="cart-summary__vat">Excludes VAT &amp; delivery</p>
+          <div class="cart-summary__artwork">
+            <strong>Next step after payment:</strong> you'll be taken to upload your artwork. Have your files ready (PDF, AI, EPS, JPG or PNG).
+          </div>
+          <button type="submit" name="checkout" class="btn btn--primary btn--lg cart-summary__checkout">Checkout &amp; Pay</button>
+          <button type="submit" name="update" class="btn cart-summary__update">Update Basket</button>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="cart-empty">
+        <p class="cart-empty__text">Your basket is empty.</p>
+        <a href="/pages/pvc-banners" class="btn btn--primary">Shop PVC Banners</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Basket"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,67 @@
+<section class="faq">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="faq__list">
+      {% for block in section.blocks %}
+        <details class="faq__item" {{ block.shopify_attributes }}>
+          <summary class="faq__question">
+            {{ block.settings.question }}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="faq__chevron"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq__answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer text here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "question", "settings": { "question": "What banner material should I choose?", "answer": "<p>PVC banners are best for most everyday use. Choose mesh for windy or exposed locations, and roller banners for indoor events and exhibitions.</p>" } },
+        { "type": "question", "settings": { "question": "Can I upload my own artwork?", "answer": "<p>Yes. We accept PDF, AI, EPS, JPG and PNG files. Upload through our artwork page or email directly.</p>" } },
+        { "type": "question", "settings": { "question": "Do you print window graphics?", "answer": "<p>Yes. We offer clear window graphics, frosted privacy vinyl, reverse printed window decals and white ink window effects.</p>" } },
+        { "type": "question", "settings": { "question": "Can you produce backlit graphics?", "answer": "<p>Yes. We produce illuminated graphics for lightboxes, menu displays, retail signage and exhibition stands.</p>" } },
+        { "type": "question", "settings": { "question": "Are your prints suitable for indoor use?", "answer": "<p>Yes. Our prints are suitable for retail, offices and public-facing interiors.</p>" } },
+        { "type": "question", "settings": { "question": "How fast can you turn orders around?", "answer": "<p>Standard turnaround is 2-3 working days. Express options are available on request.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

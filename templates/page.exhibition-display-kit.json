@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Exhibition Display Kits",
+        "description": "Complete exhibition and trade show display solutions. Portable banner stands, backdrops and branded display systems for professional events and conferences."
+      }
+    },
+    "designs": {
+      "type": "featured-buy",
+      "settings": {
+        "heading": "Exhibition Display Kits",
+        "description": "Choose a complete kit and add it to your basket. Pay securely, then upload your branded artwork.",
+        "note": "All kits include display hardware and a padded carry case. Free artwork check on every order."
+      },
+      "blocks": {
+        "d1": {
+          "type": "item",
+          "settings": {
+            "product_handle": "exhibition-display-kit",
+            "variant_title": "Starter Kit",
+            "label": "Starter Kit",
+            "description": "1 roller banner + table cover",
+            "fallback_asset": "product-exhibition.png",
+            "button_text": "Add to basket",
+            "link": "/pages/upload-artwork"
+          }
+        },
+        "d2": {
+          "type": "item",
+          "settings": {
+            "product_handle": "exhibition-display-kit",
+            "variant_title": "Standard Kit",
+            "label": "Standard Kit",
+            "description": "2 roller banners + backdrop",
+            "fallback_asset": "product-exhibition.png",
+            "button_text": "Add to basket",
+            "link": "/pages/upload-artwork"
+          }
+        },
+        "d3": {
+          "type": "item",
+          "settings": {
+            "product_handle": "exhibition-display-kit",
+            "variant_title": "Premium Kit",
+            "label": "Premium Kit",
+            "description": "3 roller banners + backdrop + table cover",
+            "fallback_asset": "product-exhibition.png",
+            "badge": "Most popular",
+            "button_text": "Add to basket",
+            "link": "/pages/upload-artwork"
+          }
+        },
+        "d4": {
+          "type": "item",
+          "settings": {
+            "product_handle": "exhibition-display-kit",
+            "variant_title": "Pop-Up Stand",
+            "label": "Pop-Up Stand",
+            "description": "3x3 curved pop-up display",
+            "fallback_asset": "product-exhibition.png",
+            "button_text": "Add to basket",
+            "link": "/pages/upload-artwork"
+          }
+        },
+        "d5": {
+          "type": "item",
+          "settings": {
+            "product_handle": "exhibition-display-kit",
+            "variant_title": "Shell Scheme Graphics",
+            "label": "Shell Scheme Graphics",
+            "description": "Custom panels for shell scheme stands",
+            "fallback_asset": "product-exhibition.png",
+            "button_text": "Add to basket",
+            "link": "/pages/upload-artwork"
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5"
+      ]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Ideal For"
+      },
+      "blocks": {
+        "u1": {
+          "type": "use",
+          "settings": {
+            "text": "Trade shows and exhibitions"
+          }
+        },
+        "u2": {
+          "type": "use",
+          "settings": {
+            "text": "Conference stands"
+          }
+        },
+        "u3": {
+          "type": "use",
+          "settings": {
+            "text": "Product launches"
+          }
+        },
+        "u4": {
+          "type": "use",
+          "settings": {
+            "text": "Corporate events"
+          }
+        },
+        "u5": {
+          "type": "use",
+          "settings": {
+            "text": "Retail promotions"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4",
+        "u5"
+      ]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Exhibition Kit FAQ"
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What's included in an exhibition kit?",
+            "answer": "<p>Each kit includes the display hardware and custom printed graphics. Check individual kit options for exact contents.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Are the displays portable?",
+            "answer": "<p>Yes. All our exhibition displays are designed to be lightweight and portable with carry cases included.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Can I order replacement graphics?",
+            "answer": "<p>Yes. We can print replacement graphics for existing hardware. Just provide the dimensions.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "How quickly can I get an exhibition kit?",
+            "answer": "<p>Standard turnaround is 3-5 working days. Express options available for urgent events.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Stand out at your next exhibition",
+        "description": "Upload your branding or get in touch for a complete display solution.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    },
+    "add_ons": {
+      "type": "add-ons",
+      "settings": {
+        "heading": "Optional Extras & Design Services",
+        "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
+        "product_handle": "add-on-services",
+        "button_text": "Add to basket",
+        "note": "Add-ons are optional and added separately to your basket."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "designs",
+    "uses",
+    "faq",
+    "add_ons",
+    "cta"
+  ]
+}

@@ -1,0 +1,96 @@
+<section class="features-grid">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="features-grid__items">
+      {% for block in section.blocks %}
+        <div class="feature-card" {{ block.shopify_attributes }}>
+          <div class="feature-card__icon">
+            {% if block.settings.icon == 'window' %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            {% elsif block.settings.icon == 'sun' %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            {% elsif block.settings.icon == 'droplet' %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            {% elsif block.settings.icon == 'home' %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            {% elsif block.settings.icon == 'flag' %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            {% elsif block.settings.icon == 'layers' %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            {% else %}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            {% endif %}
+          </div>
+          <h3 class="feature-card__title">{{ block.settings.title }}</h3>
+          <p class="feature-card__desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Features grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What we can print for you"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "window", "label": "Window" },
+            { "value": "sun", "label": "Sun / Backlit" },
+            { "value": "droplet", "label": "Droplet / Ink" },
+            { "value": "home", "label": "Home / Indoor" },
+            { "value": "flag", "label": "Flag / Outdoor" },
+            { "value": "layers", "label": "Layers" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features grid",
+      "settings": {
+        "heading": "What we can print for you"
+      },
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "window", "title": "Window graphics", "description": "Clear, frosted and inside-glass designs for shops, offices and branded spaces." } },
+        { "type": "feature", "settings": { "icon": "sun", "title": "Backlit displays", "description": "Lightbox and illuminated graphics for retail, hospitality and event environments." } },
+        { "type": "feature", "settings": { "icon": "droplet", "title": "White ink effects", "description": "Premium print options for clear materials, layered graphics and stronger contrast." } },
+        { "type": "feature", "settings": { "icon": "home", "title": "Indoor-safe graphics", "description": "A strong fit for interiors, public-facing spaces and branded environments." } },
+        { "type": "feature", "settings": { "icon": "flag", "title": "Outdoor banners and signage", "description": "Durable options for events, construction, retail and day-to-day promotion." } },
+        { "type": "feature", "settings": { "icon": "layers", "title": "Walls, posters and promotional print", "description": "A wider range of print products from one supplier." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
