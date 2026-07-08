@@ -1,0 +1,93 @@
+<section class="add-ons">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="add-ons__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="add-ons__subtitle">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- assign product = all_products[section.settings.product_handle] -%}
+
+    {%- if product != blank and product.id != blank -%}
+      <div class="add-ons__grid">
+        {%- for variant in product.variants -%}
+          <div class="add-ons__card">
+            <div class="add-ons__info">
+              <span class="add-ons__name">{{ variant.title }}</span>
+              {%- if variant.price == 0 -%}
+                <span class="add-ons__price add-ons__price--free">FREE</span>
+              {%- else -%}
+                <span class="add-ons__price">{{ variant.price | money }}</span>
+              {%- endif -%}
+            </div>
+            {%- if variant.available -%}
+              <button type="button"
+                class="btn btn--primary add-ons__add js-add-to-cart"
+                data-variant-id="{{ variant.id }}"
+                data-variant-title="{{ product.title | append: ' — ' | append: variant.title | escape }}">
+                {{ section.settings.button_text | default: 'Add to basket' }}
+              </button>
+            {%- else -%}
+              <button type="button" class="btn add-ons__add" disabled>Unavailable</button>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.note != blank -%}
+        <p class="add-ons__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    {%- else -%}
+      {%- if request.design_mode -%}
+        <div class="add-ons__placeholder">
+          <p>No product found for handle <strong>{{ section.settings.product_handle }}</strong>.</p>
+          <p>Create a product in Shopify with this exact handle and one option (e.g. "Service") with these values, each with its own price: Design Check (Free), Basic Design Service, Full Custom Design, Pole Pockets. The add-on buttons then appear here automatically.</p>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Add-ons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Optional Extras & Design Services"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order."
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Shopify product handle",
+      "info": "The handle of the add-on product whose options you want to sell here (e.g. add-on-services).",
+      "default": "add-on-services"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to basket"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note under options",
+      "default": "Add-ons are optional and added separately to your basket."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Add-ons"
+    }
+  ]
+}
+{% endschema %}

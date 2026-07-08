@@ -1,0 +1,65 @@
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner__card">
+      <h2 class="cta-banner__title">{{ section.settings.heading }}</h2>
+      {% if section.settings.description != blank %}
+        <p class="cta-banner__desc">{{ section.settings.description }}</p>
+      {% endif %}
+      <div class="cta-banner__actions">
+        {% if section.settings.button_1_text != blank %}
+          <a href="{{ section.settings.button_1_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_1_text }}</a>
+        {% endif %}
+        {% if section.settings.button_2_text != blank %}
+          <a href="{{ section.settings.button_2_link }}" class="btn btn--outline btn--lg">{{ section.settings.button_2_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ready to order?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Upload your artwork or get in touch for a custom quote."
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 text",
+      "default": "Upload Artwork"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 text",
+      "default": "Get a Quote"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA banner"
+    }
+  ]
+}
+{% endschema %}

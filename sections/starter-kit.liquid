@@ -1,0 +1,81 @@
+<section class="starter-kit">
+  <div class="container">
+    <div class="starter-kit__card">
+      <div class="starter-kit__content">
+        <span class="starter-kit__badge">Best Value</span>
+        <h2 class="starter-kit__title">{{ section.settings.heading }}</h2>
+        <ul class="starter-kit__list">
+          {% for block in section.blocks %}
+            <li class="starter-kit__item" {{ block.shopify_attributes }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              {{ block.settings.text }}
+            </li>
+          {% endfor %}
+        </ul>
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
+      {% if section.settings.image != blank %}
+        <div class="starter-kit__image">
+          <img src="{{ section.settings.image | image_url: width: 600 }}" alt="{{ section.settings.heading }}" loading="lazy">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Starter kit",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Starter Business Kit"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Get a Quote"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Kit item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item text",
+          "default": "Kit item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Starter kit",
+      "blocks": [
+        { "type": "item", "settings": { "text": "2 PVC banners" } },
+        { "type": "item", "settings": { "text": "1 roller banner" } },
+        { "type": "item", "settings": { "text": "250 stickers" } },
+        { "type": "item", "settings": { "text": "Upload artwork included" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

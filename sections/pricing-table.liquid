@@ -1,0 +1,97 @@
+<section class="pricing-table">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="pricing-table__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="pricing-table__subtitle">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- assign headers = section.settings.columns | split: '|' -%}
+    <div class="pricing-table__wrap">
+      <table class="pricing-table__table">
+        {%- if section.settings.heading != blank -%}
+          <caption class="visually-hidden">{{ section.settings.heading }}</caption>
+        {%- endif -%}
+        {%- if headers.size > 0 -%}
+          <thead>
+            <tr>
+              {%- for h in headers -%}
+                <th scope="col">{{ h | strip }}</th>
+              {%- endfor -%}
+            </tr>
+          </thead>
+        {%- endif -%}
+        <tbody>
+          {%- for block in section.blocks -%}
+            {%- assign cells = block.settings.cells | split: '|' -%}
+            <tr {{ block.shopify_attributes }}>
+              {%- for c in cells -%}
+                {%- if forloop.first -%}
+                  <th scope="row">{{ c | strip }}</th>
+                {%- else -%}
+                  <td>{{ c | strip }}</td>
+                {%- endif -%}
+              {%- endfor -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <p class="pricing-table__note">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pricing table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bulk Pricing"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "columns",
+      "label": "Column headers (separate with |)",
+      "info": "First column is the row label. Example: Size|1|2-4|5-9|10-24|25+",
+      "default": "Size|1|2-4|5-9|10-24|25+"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note under table"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "cells",
+          "label": "Cell values (separate with |)",
+          "info": "Match the number of columns. Example: A5|£9.99|£9.49|£8.99|£8.49|£7.99",
+          "default": "A5|£9.99|£9.49|£8.99|£8.49|£7.99"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing table"
+    }
+  ]
+}
+{% endschema %}

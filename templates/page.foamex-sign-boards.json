@@ -1,0 +1,148 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "5mm Foamex Sign Boards",
+        "description": "Premium 5mm Foamex PVC sign boards (rigid foam boards) with high-definition UV printing. Waterproof, weather resistant and lightweight — perfect for shop signs, event displays and estate agent boards. Available in A5, A4, A3, A2 and A1."
+      }
+    },
+    "instant_buy": {
+      "type": "instant-buy",
+      "settings": {
+        "heading": "Buy Now — Foamex Board Sizes",
+        "description": "Order a standard size in seconds. Pay securely, then upload your artwork.",
+        "product_handle": "foamex-sign-boards",
+        "limit": 0,
+        "note": "5mm premium Foamex, full-colour UV print with a free artwork check. Prices are per board. Buy more and save — see bulk pricing below."
+      }
+    },
+    "bulk_pricing": {
+      "type": "pricing-table",
+      "settings": {
+        "heading": "Bulk Pricing — Buy More, Save More",
+        "description": "Ordering multiple boards? Prices per board drop as your quantity goes up.",
+        "columns": "Size|1|2-4|5-9|10-24|25+",
+        "note": "Bulk discounts are applied automatically in your basket when you order 2 or more of the same size. For 50+ boards, contact us for a bespoke quote."
+      },
+      "blocks": {
+        "a5": { "type": "row", "settings": { "cells": "A5|£9.99|£9.49|£8.99|£8.49|£7.99" } },
+        "a4": { "type": "row", "settings": { "cells": "A4|£11.99|£11.39|£10.79|£10.19|£9.59" } },
+        "a3": { "type": "row", "settings": { "cells": "A3|£14.99|£14.24|£13.49|£12.74|£11.99" } },
+        "a2": { "type": "row", "settings": { "cells": "A2|£19.99|£18.99|£17.99|£16.99|£15.99" } },
+        "a1": { "type": "row", "settings": { "cells": "A1|£27.99|£26.59|£25.19|£23.79|£22.39" } }
+      },
+      "block_order": ["a5", "a4", "a3", "a2", "a1"]
+    },
+    "specs": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Specifications"
+      },
+      "blocks": {
+        "sp1": { "type": "use", "settings": { "text": "5mm premium Foamex PVC board" } },
+        "sp2": { "type": "use", "settings": { "text": "High-definition UV printing" } },
+        "sp3": { "type": "use", "settings": { "text": "Waterproof and weather resistant" } },
+        "sp4": { "type": "use", "settings": { "text": "Fade resistant" } },
+        "sp5": { "type": "use", "settings": { "text": "Smooth matt finish" } },
+        "sp6": { "type": "use", "settings": { "text": "Lightweight but rigid" } },
+        "sp7": { "type": "use", "settings": { "text": "Indoor and outdoor suitable" } },
+        "sp8": { "type": "use", "settings": { "text": "Full colour print" } },
+        "sp9": { "type": "use", "settings": { "text": "Free artwork check" } },
+        "sp10": { "type": "use", "settings": { "text": "UK printed" } }
+      },
+      "block_order": ["sp1", "sp2", "sp3", "sp4", "sp5", "sp6", "sp7", "sp8", "sp9", "sp10"]
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Perfect For"
+      },
+      "blocks": {
+        "u1": { "type": "use", "settings": { "text": "Shop signs" } },
+        "u2": { "type": "use", "settings": { "text": "Event displays" } },
+        "u3": { "type": "use", "settings": { "text": "Estate agents" } },
+        "u4": { "type": "use", "settings": { "text": "Exhibition displays" } },
+        "u5": { "type": "use", "settings": { "text": "Safety signs" } },
+        "u6": { "type": "use", "settings": { "text": "Promotional boards" } },
+        "u7": { "type": "use", "settings": { "text": "Indoor and outdoor use" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5", "u6", "u7"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Foamex Sign Board FAQ"
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What are Foamex sign boards?",
+            "answer": "<p>Foamex (also called foam board, PVC sign board or rigid sign board) is a lightweight but rigid PVC board. Ours are 5mm thick with a smooth matt finish, ideal for professional signage indoors and outdoors.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Are they suitable for outdoor use?",
+            "answer": "<p>Yes. Our boards are waterproof, weather resistant and fade resistant, so they perform well outdoors as well as indoors.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "How thick are the boards?",
+            "answer": "<p>All sizes are printed on premium 5mm Foamex, which is rigid enough to stand up to daily use while staying lightweight and easy to mount.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer bulk discounts?",
+            "answer": "<p>Yes. Prices per board reduce as your quantity increases — see the bulk pricing table above. For orders of 50 or more, contact us for a bespoke quote.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "How do I supply my artwork?",
+            "answer": "<p>Pay securely first, then upload your artwork on our Upload Artwork page. We accept PDF, AI, EPS, JPG and PNG files, and every order includes a free artwork check.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to order your Foamex signs?",
+        "description": "Upload your artwork or get in touch for a bespoke quote.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    },
+    "add_ons": {
+      "type": "add-ons",
+      "settings": {
+        "heading": "Optional Extras & Design Services",
+        "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
+        "product_handle": "add-on-services",
+        "button_text": "Add to basket",
+        "note": "Add-ons are optional and added separately to your basket."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "instant_buy",
+    "bulk_pricing",
+    "specs",
+    "uses",
+    "faq",
+    "cta",
+    "add_ons"
+  ]
+}

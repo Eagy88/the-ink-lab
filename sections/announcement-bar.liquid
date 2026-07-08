@@ -1,0 +1,40 @@
+{%- assign promo = section.settings.promo_text | default: 'Free shipping when you spend £50 or more' -%}
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    {% if settings.email_address != blank %}
+      <a href="mailto:{{ settings.email_address }}" class="announcement-bar__link announcement-bar__email">
+        <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        {{ settings.email_address }}
+      </a>
+    {% endif %}
+    <div class="announcement-marquee" aria-label="{{ promo | escape }}">
+      <span class="visually-hidden">{{ promo }}</span>
+      <div class="announcement-marquee__track" aria-hidden="true">
+        {% for group in (1..2) %}
+          <div class="announcement-marquee__group">
+            {% for item in (1..10) %}
+              <span class="announcement-marquee__item">
+                <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                {{ promo }}
+              </span>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "promo_text",
+      "label": "Promo message",
+      "default": "Free shipping when you spend £50 or more"
+    }
+  ]
+}
+{% endschema %}
