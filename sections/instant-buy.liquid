@@ -1,0 +1,107 @@
+<section class="instant-buy">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="instant-buy__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="instant-buy__subtitle">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- assign product = all_products[section.settings.product_handle] -%}
+
+    {%- if product != blank and product.id != blank -%}
+      <div class="instant-buy__grid">
+        {%- assign shown = 0 -%}
+        {%- for variant in product.variants -%}
+          {%- assign limit = section.settings.limit | plus: 0 -%}
+          {%- if limit > 0 and shown >= limit -%}{%- break -%}{%- endif -%}
+          {%- assign shown = shown | plus: 1 -%}
+          <div class="instant-buy__card">
+            <span class="instant-buy__size">{{ variant.title }}</span>
+            <span class="instant-buy__price">{{ variant.price | money }}</span>
+            {%- if variant.available -%}
+              <button type="button"
+                class="btn btn--primary instant-buy__add js-add-to-cart"
+                data-variant-id="{{ variant.id }}"
+                data-variant-title="{{ product.title | append: ' — ' | append: variant.title | escape }}">
+                Add to basket
+              </button>
+            {%- else -%}
+              <button type="button" class="btn instant-buy__add" disabled>Sold out</button>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.note != blank -%}
+        <p class="instant-buy__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+      {%- if section.settings.view_all_link != blank and section.settings.view_all_text != blank -%}
+        <a href="{{ section.settings.view_all_link }}" class="instant-buy__viewall">{{ section.settings.view_all_text }}</a>
+      {%- endif -%}
+    {%- else -%}
+      {%- if request.design_mode -%}
+        <div class="instant-buy__placeholder">
+          <p>No product found for handle <strong>{{ section.settings.product_handle }}</strong>.</p>
+          <p>Create a product in Shopify with this exact handle and a <strong>Size</strong> option, then your instant-buy buttons appear here automatically.</p>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instant buy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Buy Now — Popular Sizes"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Order a standard size in seconds. Pay securely, then upload your artwork."
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Shopify product handle",
+      "info": "The handle of the product whose size variants you want to sell here (e.g. pvc-banners).",
+      "default": "pvc-banners"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Max sizes to show (0 = all)",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note under buttons",
+      "default": "Prices include eyelets. Need a different size? Use the custom quote calculator below."
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View-all link text"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View-all link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instant buy"
+    }
+  ]
+}
+{% endschema %}

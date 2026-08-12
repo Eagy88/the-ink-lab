@@ -1,0 +1,129 @@
+<section class="print-quality">
+  <div class="container">
+    <div class="print-quality__inner">
+      <div class="print-quality__content">
+        {% if section.settings.eyebrow != blank %}
+          <span class="print-quality__eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+        <h2 class="print-quality__title">{{ section.settings.heading }}</h2>
+        {% if section.settings.body != blank %}
+          <div class="print-quality__body">{{ section.settings.body }}</div>
+        {% endif %}
+        {% if section.blocks.size > 0 %}
+          <ul class="print-quality__list">
+            {% for block in section.blocks %}
+              <li class="print-quality__item" {{ block.shopify_attributes }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{ settings.color_primary }}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <strong>{{ block.settings.title }}</strong>
+                  {% if block.settings.text != blank %}<span>{{ block.settings.text }}</span>{% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
+      <div class="print-quality__media">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url: width: 700 }}" alt="{{ section.settings.heading }}" loading="lazy">
+        {% else %}
+          <div class="print-quality__badge-card">
+            <span class="print-quality__badge-label">Printed on</span>
+            <span class="print-quality__badge-name">{{ section.settings.printer_name }}</span>
+            {% if section.settings.printer_caption != blank %}
+              <span class="print-quality__badge-caption">{{ section.settings.printer_caption }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Print quality",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Studio-grade printing"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Printed on the HP Latex 800w"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Every order is produced on our HP Latex 800w \u2014 one of the most advanced large-format printers available. It uses water-based latex inks, including a true white, to deliver vivid, durable, photo-quality results on banners, window graphics and displays. We invest in the best kit so your print looks exactly how you imagined it, every single time.</p>"
+    },
+    {
+      "type": "text",
+      "id": "printer_name",
+      "label": "Printer name (badge)",
+      "default": "HP Latex 800w"
+    },
+    {
+      "type": "text",
+      "id": "printer_caption",
+      "label": "Printer caption (badge)",
+      "default": "Water-based inks \u00b7 True white \u00b7 Photo-quality"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (optional \u2014 replaces badge)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Upload your artwork"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Quality point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Quality point"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Print quality",
+      "blocks": [
+        { "type": "point", "settings": { "title": "Vivid, accurate colour", "text": "Wide colour gamut for bold, true-to-brand prints." } },
+        { "type": "point", "settings": { "title": "True white ink", "text": "Crisp graphics on clear and coloured materials." } },
+        { "type": "point", "settings": { "title": "Built to last", "text": "Scratch and water-resistant for indoor and outdoor use." } },
+        { "type": "point", "settings": { "title": "Eco-friendlier inks", "text": "Water-based latex inks \u2014 odourless and low impact." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

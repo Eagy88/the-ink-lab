@@ -1,0 +1,225 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Roller Banner Printing",
+        "description": "Premium pull-up roller banners for exhibitions, retail displays, events, trade shows, receptions, schools and presentations. UK printed with a free artwork check."
+      }
+    },
+    "rb_product": {
+      "type": "roller-banner-product",
+      "settings": {
+        "product_handle": "premium-roller-banner",
+        "heading": "Premium Roller Banner",
+        "size_label": "850mm x 2000mm",
+        "was_price": "£59.99",
+        "now_price": "£49.99",
+        "price_suffix": "per banner",
+        "description": "Make your brand stand out with our premium roller banners, perfect for exhibitions, retail displays, events, trade shows, receptions, schools and presentations.",
+        "show_buy": false,
+        "choose_prompt": "Choose your quantity and save below ↓",
+        "buy_note": "Pay securely, then upload your artwork. Free artwork check. UK printed.",
+        "fallback_button": "Order now",
+        "fallback_link": "/pages/upload-artwork",
+        "specs_heading": "Specifications",
+        "included_heading": "What's Included",
+        "lightstop_heading": "Why Choose Our Light Stop Material?",
+        "lightstop_text": "<p>Our 300 micron Light Stop banner film features a grey backing layer that prevents light show-through, ensuring vibrant colours, deeper blacks and a professional appearance even when positioned in bright environments.</p>",
+        "artwork_note": "<p><strong>Need artwork?</strong> Our design team can create your banner from just £15.00.</p>"
+      },
+      "blocks": {
+        "spec1": {
+          "type": "spec",
+          "settings": {
+            "text": "850mm Wide × 2000mm High"
+          }
+        },
+        "spec2": {
+          "type": "spec",
+          "settings": {
+            "text": "300 Micron Light Stop Banner Film"
+          }
+        },
+        "spec3": {
+          "type": "spec",
+          "settings": {
+            "text": "Anti-Curl Material"
+          }
+        },
+        "spec4": {
+          "type": "spec",
+          "settings": {
+            "text": "High Definition Full Colour Printing"
+          }
+        },
+        "spec5": {
+          "type": "spec",
+          "settings": {
+            "text": "Premium Aluminium Roller Banner Stand"
+          }
+        },
+        "spec6": {
+          "type": "spec",
+          "settings": {
+            "text": "Padded Carry Case Included"
+          }
+        },
+        "spec7": {
+          "type": "spec",
+          "settings": {
+            "text": "Scratch Resistant Finish"
+          }
+        },
+        "spec8": {
+          "type": "spec",
+          "settings": {
+            "text": "Indoor Use"
+          }
+        },
+        "spec9": {
+          "type": "spec",
+          "settings": {
+            "text": "Free Artwork Check"
+          }
+        },
+        "spec10": {
+          "type": "spec",
+          "settings": {
+            "text": "UK Printed"
+          }
+        },
+        "inc1": {
+          "type": "included",
+          "settings": {
+            "text": "Premium roller banner cassette"
+          }
+        },
+        "inc2": {
+          "type": "included",
+          "settings": {
+            "text": "300 micron light stop graphic"
+          }
+        },
+        "inc3": {
+          "type": "included",
+          "settings": {
+            "text": "Support pole"
+          }
+        },
+        "inc4": {
+          "type": "included",
+          "settings": {
+            "text": "Padded carry bag"
+          }
+        },
+        "inc5": {
+          "type": "included",
+          "settings": {
+            "text": "Assembly instructions"
+          }
+        }
+      },
+      "block_order": [
+        "spec1",
+        "spec2",
+        "spec3",
+        "spec4",
+        "spec5",
+        "spec6",
+        "spec7",
+        "spec8",
+        "spec9",
+        "spec10",
+        "inc1",
+        "inc2",
+        "inc3",
+        "inc4",
+        "inc5"
+      ]
+    },
+    "pack_deals": {
+      "type": "pack-deals",
+      "settings": {
+        "heading": "Buy More, Save More",
+        "description": "Order multiple premium roller banners and save. Pay securely, then upload your artwork.",
+        "product_handle": "premium-roller-banner",
+        "note": "Prices include the stand and carry case. Savings shown vs. buying singles."
+      }
+    },
+    "uses": {
+      "type": "uses-list",
+      "settings": {
+        "heading": "Best For"
+      },
+      "blocks": {
+        "u1": {
+          "type": "use",
+          "settings": {
+            "text": "Trade shows"
+          }
+        },
+        "u2": {
+          "type": "use",
+          "settings": {
+            "text": "Sales presentations"
+          }
+        },
+        "u3": {
+          "type": "use",
+          "settings": {
+            "text": "Indoor events"
+          }
+        },
+        "u4": {
+          "type": "use",
+          "settings": {
+            "text": "Reception branding"
+          }
+        },
+        "u5": {
+          "type": "use",
+          "settings": {
+            "text": "Pop-up promotions"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4",
+        "u5"
+      ]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Order your roller banner today",
+        "description": "Upload your artwork or contact us for help with your design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    },
+    "add_ons": {
+      "type": "add-ons",
+      "settings": {
+        "heading": "Optional Extras & Design Services",
+        "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
+        "product_handle": "add-on-services",
+        "button_text": "Add to basket",
+        "note": "Add-ons are optional and added separately to your basket."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "rb_product",
+    "pack_deals",
+    "uses",
+    "add_ons",
+    "cta"
+  ]
+}

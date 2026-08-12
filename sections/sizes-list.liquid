@@ -1,0 +1,55 @@
+<section class="sizes-list">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="sizes-list__grid">
+      {% for block in section.blocks %}
+        <div class="sizes-list__item" {{ block.shopify_attributes }}>
+          <span class="sizes-list__size">{{ block.settings.size }}</span>
+          {% if block.settings.note != blank %}
+            <span class="sizes-list__note">{{ block.settings.note }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sizes list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Popular Sizes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "size",
+      "name": "Size option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "size",
+          "label": "Size",
+          "default": "200 x 100 cm"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Note"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sizes list"
+    }
+  ]
+}
+{% endschema %}

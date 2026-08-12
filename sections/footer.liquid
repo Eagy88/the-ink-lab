@@ -1,0 +1,62 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <img src="{{ 'logo-white.png' | asset_url }}" alt="{{ shop.name }}" class="footer__logo-img" loading="lazy">
+        </a>
+        <p class="footer__tagline">Custom printing made simple. Banners, window graphics, backlit displays, stickers and more.</p>
+        {% if settings.email_address != blank %}
+          <p class="footer__contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            {{ settings.email_address }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">Products</h4>
+        <ul class="footer__links">
+          <li><a href="/pages/pvc-banners">PVC Banners</a></li>
+          <li><a href="/pages/mesh-banners">Mesh Banners</a></li>
+          <li><a href="/pages/roller-banners">Roller Banners</a></li>
+          <li><a href="/pages/window-graphics">Window Graphics</a></li>
+          <li><a href="/pages/backlit-graphics">Backlit Graphics</a></li>
+          <li><a href="/pages/stickers-labels">Stickers & Labels</a></li>
+          <li><a href="/pages/foamex-sign-boards">Foamex Sign Boards</a></li>
+          <li><a href="/pages/birthday-banners">Birthday Banners</a></li>
+          <li><a href="/pages/wedding-backdrops">Wedding Backdrops</a></li>
+          <li><a href="/pages/engagement-backdrops">Engagement Backdrops</a></li>
+          <li><a href="/pages/baby-shower">Baby Shower</a></li>
+          <li><a href="/pages/exhibition-display-kit">Exhibition Display Kit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="/pages/upload-artwork">Upload Artwork</a></li>
+          <li><a href="/pages/contact">Contact Us</a></li>
+          <li><a href="/pages/contact">Get a Quote</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">Opening Hours</h4>
+        <p class="footer__text">{{ settings.opening_hours | default: 'Monday - Friday: 9am - 5:30pm' }}</p>
+        <p class="footer__text">Closed weekends and bank holidays</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

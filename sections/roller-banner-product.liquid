@@ -1,0 +1,157 @@
+<section class="rb-product">
+  <div class="container">
+    {%- assign product = all_products[section.settings.product_handle] -%}
+    {%- assign has_product = false -%}
+    {%- if product != blank and product.id != blank -%}
+      {%- assign has_product = true -%}
+      {%- assign variant = product.variants.first -%}
+    {%- endif -%}
+
+    <div class="rb-product__top">
+      <div class="rb-product__media">
+        {%- if has_product and product.featured_image != blank -%}
+          <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}" loading="lazy" width="800">
+        {%- elsif section.settings.image != blank -%}
+          <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.heading | escape }}" loading="lazy" width="800">
+        {%- else -%}
+          <div class="rb-product__media-placeholder">{{ 'image' | placeholder_svg_tag }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="rb-product__info">
+        <h1 class="rb-product__title">{{ section.settings.heading | default: product.title }}</h1>
+        {%- if section.settings.size_label != blank -%}
+          <p class="rb-product__size">{{ section.settings.size_label }}</p>
+        {%- endif -%}
+
+        <div class="rb-product__pricing">
+          {%- if has_product -%}
+            {%- if variant.compare_at_price > variant.price -%}
+              <span class="rb-product__was">{{ variant.compare_at_price | money }}</span>
+            {%- endif -%}
+            <span class="rb-product__now">{{ variant.price | money }}</span>
+            {%- if section.settings.price_suffix != blank -%}
+              <span class="rb-product__suffix">{{ section.settings.price_suffix }}</span>
+            {%- endif -%}
+          {%- else -%}
+            {%- if section.settings.was_price != blank -%}
+              <span class="rb-product__was">{{ section.settings.was_price }}</span>
+            {%- endif -%}
+            <span class="rb-product__now">{{ section.settings.now_price }}</span>
+            {%- if section.settings.price_suffix != blank -%}
+              <span class="rb-product__suffix">{{ section.settings.price_suffix }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.description != blank -%}
+          <p class="rb-product__desc">{{ section.settings.description }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.show_buy -%}
+          {%- if has_product and variant.available -%}
+            <button type="button"
+              class="btn btn--primary btn--lg rb-product__add js-add-to-cart"
+              data-variant-id="{{ variant.id }}"
+              data-variant-title="{{ product.title | escape }}">
+              Add to basket
+            </button>
+          {%- elsif has_product -%}
+            <button type="button" class="btn btn--lg" disabled>Sold out</button>
+          {%- else -%}
+            <a href="{{ section.settings.fallback_link | default: '/pages/upload-artwork' }}" class="btn btn--primary btn--lg">{{ section.settings.fallback_button | default: 'Order now' }}</a>
+          {%- endif -%}
+        {%- elsif section.settings.choose_prompt != blank -%}
+          <p class="rb-product__prompt">{{ section.settings.choose_prompt }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.buy_note != blank -%}
+          <p class="rb-product__buy-note">{{ section.settings.buy_note }}</p>
+        {%- endif -%}
+
+        {%- if has_product == false and request.design_mode -%}
+          <p class="rb-product__placeholder">No product found for handle <strong>{{ section.settings.product_handle }}</strong>. Create it in Shopify (with a compare-at price on the single banner for the strikethrough) and the live price appears here automatically.</p>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- assign specs = section.blocks | where: 'type', 'spec' -%}
+    {%- assign included = section.blocks | where: 'type', 'included' -%}
+
+    <div class="rb-product__cols">
+      {%- if specs.size > 0 -%}
+        <div class="rb-product__panel">
+          <h2 class="rb-product__h2">{{ section.settings.specs_heading | default: 'Specifications' }}</h2>
+          <ul class="rb-product__specs">
+            {%- for block in specs -%}
+              <li {{ block.shopify_attributes }}><span class="rb-product__tick">&#10003;</span>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if included.size > 0 -%}
+        <div class="rb-product__panel">
+          <h2 class="rb-product__h2">{{ section.settings.included_heading | default: 'What&rsquo;s Included' }}</h2>
+          <ul class="rb-product__included">
+            {%- for block in included -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.lightstop_heading != blank or section.settings.lightstop_text != blank -%}
+      <div class="rb-product__feature">
+        {%- if section.settings.lightstop_heading != blank -%}
+          <h2 class="rb-product__h2">{{ section.settings.lightstop_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.lightstop_text != blank -%}
+          <div class="rb-product__feature-text">{{ section.settings.lightstop_text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.artwork_note != blank -%}
+      <div class="rb-product__artwork">{{ section.settings.artwork_note }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Roller banner product",
+  "settings": [
+    { "type": "text", "id": "product_handle", "label": "Shopify product handle", "info": "The roller banner product. Use the same pack product as the Pack deals section below (e.g. roller-banner-packs) so the price reads from the single-banner variant.", "default": "roller-banner-packs" },
+    { "type": "text", "id": "heading", "label": "Title", "default": "Premium Roller Banner" },
+    { "type": "text", "id": "size_label", "label": "Size label", "default": "850mm x 2000mm" },
+    { "type": "image_picker", "id": "image", "label": "Fallback image", "info": "Used if the product has no image." },
+    { "type": "text", "id": "was_price", "label": "Was price (fallback)", "info": "Only shown if no product is linked.", "default": "£59.99" },
+    { "type": "text", "id": "now_price", "label": "Now price (fallback)", "info": "Only shown if no product is linked.", "default": "£49.99" },
+    { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "per banner" },
+    { "type": "textarea", "id": "description", "label": "Short description", "default": "Make your brand stand out with our premium roller banners, perfect for exhibitions, retail displays, events, trade shows, receptions, schools and presentations." },
+    { "type": "checkbox", "id": "show_buy", "label": "Show single Add to basket button", "info": "Turn off when using the Pack deals section below to handle buying.", "default": false },
+    { "type": "text", "id": "choose_prompt", "label": "Prompt (when buy button hidden)", "default": "Choose your quantity and save below \u2193" },
+    { "type": "text", "id": "buy_note", "label": "Note under buy area", "default": "Pay securely, then upload your artwork. Free artwork check. UK printed." },
+    { "type": "text", "id": "fallback_button", "label": "Fallback button text", "default": "Order now" },
+    { "type": "url", "id": "fallback_link", "label": "Fallback button link" },
+    { "type": "header", "content": "Specifications" },
+    { "type": "text", "id": "specs_heading", "label": "Specifications heading", "default": "Specifications" },
+    { "type": "header", "content": "Included" },
+    { "type": "text", "id": "included_heading", "label": "Included heading", "default": "What's Included" },
+    { "type": "header", "content": "Material feature" },
+    { "type": "text", "id": "lightstop_heading", "label": "Feature heading", "default": "Why Choose Our Light Stop Material?" },
+    { "type": "richtext", "id": "lightstop_text", "label": "Feature text", "default": "<p>Our 300 micron Light Stop banner film features a grey backing layer that prevents light show-through, ensuring vibrant colours, deeper blacks and a professional appearance even when positioned in bright environments.</p>" },
+    { "type": "header", "content": "Artwork" },
+    { "type": "richtext", "id": "artwork_note", "label": "Artwork note", "default": "<p><strong>Need artwork?</strong> Our design team can create your banner from just £15.00.</p>" }
+  ],
+  "blocks": [
+    { "type": "spec", "name": "Specification", "settings": [ { "type": "text", "id": "text", "label": "Text" } ] },
+    { "type": "included", "name": "Included item", "settings": [ { "type": "text", "id": "text", "label": "Text" } ] }
+  ],
+  "presets": [
+    { "name": "Roller banner product" }
+  ]
+}
+{% endschema %}

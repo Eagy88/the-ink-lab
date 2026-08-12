@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Engagement Party Backdrops & Banners",
+        "description": "Custom printed engagement party backdrops and celebration banners. Beautiful designs to mark your engagement with personalised touches."
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "blocks": {
+        "d1": {
+          "type": "design",
+          "settings": {
+            "title": "She Said Yes",
+            "description": "Classic celebration design with ring motif",
+            "price": "14.99",
+            "image": "shopify://shop_images/SHE_SAID_YES.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d2": {
+          "type": "design",
+          "settings": {
+            "title": "Gold & Rose",
+            "description": "Elegant rose gold and blush tones",
+            "price": "14.99",
+            "image": "shopify://shop_images/ROSE_GOLD.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d3": {
+          "type": "design",
+          "settings": {
+            "title": "Photo Backdrop",
+            "description": "Feature your favourite couple photos",
+            "price": "14.99",
+            "image": "shopify://shop_images/PHOTO_a5bb49d8-a64b-475a-a325-12dd12de0964.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d4": {
+          "type": "design",
+          "settings": {
+            "title": "Modern Script",
+            "description": "Stylish calligraphy design",
+            "price": "14.99",
+            "image": "shopify://shop_images/MODERN.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d5": {
+          "type": "design",
+          "settings": {
+            "title": "Floral Garden",
+            "description": "Beautiful botanical arrangement",
+            "price": "14.99",
+            "image": "shopify://shop_images/FLORAL.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d6": {
+          "type": "design",
+          "settings": {
+            "title": "Custom Design",
+            "description": "Upload your own artwork",
+            "price": "14.99",
+            "image": "shopify://shop_images/CUSTOM_746df401-3d07-4d51-aad5-0dcd0633efff.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5",
+        "d6"
+      ],
+      "settings": {
+        "heading": "Engagement Designs",
+        "subheading": "Browse our engagement backdrop designs or upload your own artwork.",
+        "size_product_handle": "",
+        "size_label": "Choose a size",
+        "buy_button_text": "Add to basket",
+        "buy_note": "Pay securely, then upload your artwork after checkout."
+      }
+    },
+    "quickbuy_pvc": {
+      "type": "instant-buy",
+      "settings": {
+        "heading": "Buy PVC Banners — Popular Sizes",
+        "description": "Order a standard size in seconds. Pay securely, then upload your artwork.",
+        "product_handle": "pvc-banners",
+        "limit": 0,
+        "note": "440gsm tear-resistant weatherproof PVC. Prices include eyelets. Need a different size? Get in touch for a custom quote.",
+        "view_all_text": "",
+        "view_all_link": ""
+      }
+    },
+    "quickbuy_roller": {
+      "type": "instant-buy",
+      "settings": {
+        "heading": "Need a Roller Banner Too?",
+        "description": "Portable, reusable display with stand and carry case. Pay securely, then upload your artwork.",
+        "product_handle": "premium-roller-banner",
+        "limit": 0,
+        "note": "Light-stop material, free-standing and ideal for events and exhibitions.",
+        "view_all_text": "",
+        "view_all_link": ""
+      }
+    },
+    "add_ons": {
+      "type": "add-ons",
+      "settings": {
+        "heading": "Optional Extras & Design Services",
+        "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
+        "product_handle": "add-on-services",
+        "button_text": "Add to basket",
+        "note": "Add-ons are optional and added separately to your basket."
+      }
+    },
+    "uses": {
+      "type": "uses-list",
+      "blocks": {
+        "u1": {
+          "type": "use",
+          "settings": {
+            "text": "Engagement party backdrops"
+          }
+        },
+        "u2": {
+          "type": "use",
+          "settings": {
+            "text": "Announcement banners"
+          }
+        },
+        "u3": {
+          "type": "use",
+          "settings": {
+            "text": "Photo booth backgrounds"
+          }
+        },
+        "u4": {
+          "type": "use",
+          "settings": {
+            "text": "Venue decoration"
+          }
+        },
+        "u5": {
+          "type": "use",
+          "settings": {
+            "text": "Social media photo moments"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4",
+        "u5"
+      ],
+      "settings": {
+        "heading": "Perfect For"
+      }
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "blocks": {
+        "s1": {
+          "type": "size",
+          "settings": {
+            "size": "200 x 100 cm",
+            "note": ""
+          }
+        },
+        "s2": {
+          "type": "size",
+          "settings": {
+            "size": "200 x 200 cm",
+            "note": ""
+          }
+        },
+        "s3": {
+          "type": "size",
+          "settings": {
+            "size": "300 x 200 cm",
+            "note": ""
+          }
+        },
+        "s4": {
+          "type": "size",
+          "settings": {
+            "size": "150 x 200 cm",
+            "note": ""
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "heading": "Popular Engagement Backdrop Sizes"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I add our names and engagement date?",
+            "answer": "<p>Yes. All designs can be personalised with your names, date, and custom messages.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What sizes work best for engagement parties?",
+            "answer": "<p>For photo backdrops, 200x200cm or 300x200cm works well. For wall banners, 200x100cm is popular.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "How quickly can I receive my order?",
+            "answer": "<p>Standard turnaround is 2-3 working days. Express options available on request.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "heading": "Engagement Backdrop FAQ"
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Celebrate your engagement in style",
+        "description": "Upload your artwork or get in touch for a personalised design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "designs",
+    "quickbuy_pvc",
+    "quickbuy_roller",
+    "add_ons",
+    "uses",
+    "sizes",
+    "faq",
+    "cta"
+  ]
+}

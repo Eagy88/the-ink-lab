@@ -1,0 +1,96 @@
+<section class="pack-deals">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="pack-deals__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="pack-deals__subtitle">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- assign product = all_products[section.settings.product_handle] -%}
+
+    {%- if product != blank and product.id != blank -%}
+      {%- assign base_variant = product.variants.first -%}
+      {%- assign base_qty = base_variant.title | split: ' ' | first | times: 1 -%}
+      {%- if base_qty < 1 -%}{%- assign base_qty = 1 -%}{%- endif -%}
+      {%- assign base_unit = base_variant.price | divided_by: base_qty -%}
+
+      <div class="pack-deals__grid">
+        {%- for variant in product.variants -%}
+          {%- assign qty = variant.title | split: ' ' | first | times: 1 -%}
+          {%- if qty < 1 -%}{%- assign qty = 1 -%}{%- endif -%}
+          {%- assign full_price = base_unit | times: qty -%}
+          {%- assign save = full_price | minus: variant.price -%}
+          {%- assign per_unit = variant.price | times: 1.0 | divided_by: qty | round -%}
+          {%- assign pct = save | times: 100 | divided_by: full_price -%}
+          <div class="pack-deals__card{% if save > 0 %} pack-deals__card--deal{% endif %}">
+            {%- if save > 0 -%}
+              <span class="pack-deals__badge">Save {{ pct }}%</span>
+            {%- endif -%}
+            <span class="pack-deals__qty">{{ variant.title }}</span>
+            <span class="pack-deals__price">{{ variant.price | money }}</span>
+            <span class="pack-deals__unit">{{ per_unit | money }} each</span>
+            {%- if variant.available -%}
+              <button type="button"
+                class="btn btn--primary pack-deals__add js-add-to-cart"
+                data-variant-id="{{ variant.id }}"
+                data-variant-title="{{ product.title | append: ' — ' | append: variant.title | escape }}">
+                Add to basket
+              </button>
+            {%- else -%}
+              <button type="button" class="btn pack-deals__add" disabled>Sold out</button>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.note != blank -%}
+        <p class="pack-deals__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    {%- else -%}
+      {%- if request.design_mode -%}
+        <div class="pack-deals__placeholder">
+          <p>No product found for handle <strong>{{ section.settings.product_handle }}</strong>.</p>
+          <p>Create a Shopify product with this exact handle and a <strong>Pack</strong> option (e.g. values "1 Banner", "2 Banners", "5 Banners", "10 Banners"), each priced at the pack total. The price ladder appears here automatically.</p>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pack deals",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "3m × 1m — Buy More, Save More"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Stocking up? Save when you order multiple 3m × 1m banners. Pay securely, then upload your artwork."
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Shopify product handle",
+      "info": "The handle of the multi-buy product. Its variants should be packs (e.g. 1 Banner, 2 Banners, 5 Banners, 10 Banners) priced at the pack total.",
+      "default": "pvc-banner-3m-1m"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note under cards",
+      "default": "Prices include eyelets. Savings shown vs. buying singles."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pack deals"
+    }
+  ]
+}
+{% endschema %}

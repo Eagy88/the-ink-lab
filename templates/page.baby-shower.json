@@ -1,0 +1,271 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Baby Shower Backdrops & Banners",
+        "description": "Adorable custom printed baby shower backdrops and celebration banners. Sweet personalised designs for welcoming your little one."
+      }
+    },
+    "designs": {
+      "type": "design-gallery",
+      "blocks": {
+        "d1": {
+          "type": "design",
+          "settings": {
+            "title": "It's a Boy",
+            "description": "Blue themed with clouds and stars",
+            "price": "28.00",
+            "image": "shopify://shop_images/Boy.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d2": {
+          "type": "design",
+          "settings": {
+            "title": "It's a Girl",
+            "description": "Pink themed with butterflies and flowers",
+            "price": "28.00",
+            "image": "shopify://shop_images/Girl.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d3": {
+          "type": "design",
+          "settings": {
+            "title": "Gender Neutral",
+            "description": "Soft pastels with woodland animals",
+            "price": "28.00",
+            "image": "shopify://shop_images/Welcome.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d4": {
+          "type": "design",
+          "settings": {
+            "title": "Oh Baby",
+            "description": "Modern gold script on soft background",
+            "price": "30.00",
+            "image": "shopify://shop_images/Oh_Baby.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d5": {
+          "type": "design",
+          "settings": {
+            "title": "Twinkle Star",
+            "description": "Stars and moon dreamy design",
+            "price": "30.00",
+            "image": "shopify://shop_images/Twinkle.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        },
+        "d6": {
+          "type": "design",
+          "settings": {
+            "title": "Custom Design",
+            "description": "Upload your own artwork",
+            "price": "22.00",
+            "image": "shopify://shop_images/Custom_0d0991cb-5aa0-4d59-b2e4-547f45d38188.png",
+            "fallback_asset": "",
+            "fallback_asset_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5",
+        "d6"
+      ],
+      "settings": {
+        "heading": "Baby Shower Designs",
+        "subheading": "Browse our sweet baby shower designs or upload your own artwork.",
+        "size_product_handle": "pvc-banners",
+        "size_label": "Choose a size",
+        "buy_button_text": "Add to basket",
+        "buy_note": "Pay securely, then upload your artwork after checkout."
+      }
+    },
+    "quickbuy_roller": {
+      "type": "instant-buy",
+      "settings": {
+        "heading": "Need a Roller Banner Too?",
+        "description": "Portable, reusable display with stand and carry case. Pay securely, then upload your artwork.",
+        "product_handle": "premium-roller-banner",
+        "limit": 0,
+        "note": "Light-stop material, free-standing and ideal for events and exhibitions.",
+        "view_all_text": "",
+        "view_all_link": ""
+      }
+    },
+    "add_ons": {
+      "type": "add-ons",
+      "settings": {
+        "heading": "Optional Extras & Design Services",
+        "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
+        "product_handle": "add-on-services",
+        "button_text": "Add to basket",
+        "note": "Add-ons are optional and added separately to your basket."
+      }
+    },
+    "uses": {
+      "type": "uses-list",
+      "blocks": {
+        "u1": {
+          "type": "use",
+          "settings": {
+            "text": "Baby shower party backdrops"
+          }
+        },
+        "u2": {
+          "type": "use",
+          "settings": {
+            "text": "Gender reveal celebrations"
+          }
+        },
+        "u3": {
+          "type": "use",
+          "settings": {
+            "text": "Welcome baby banners"
+          }
+        },
+        "u4": {
+          "type": "use",
+          "settings": {
+            "text": "Nursery photo backgrounds"
+          }
+        },
+        "u5": {
+          "type": "use",
+          "settings": {
+            "text": "Table and venue decoration"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4",
+        "u5"
+      ],
+      "settings": {
+        "heading": "Perfect For"
+      }
+    },
+    "sizes": {
+      "type": "sizes-list",
+      "blocks": {
+        "s1": {
+          "type": "size",
+          "settings": {
+            "size": "150 x 100 cm",
+            "note": ""
+          }
+        },
+        "s2": {
+          "type": "size",
+          "settings": {
+            "size": "200 x 100 cm",
+            "note": ""
+          }
+        },
+        "s3": {
+          "type": "size",
+          "settings": {
+            "size": "200 x 200 cm",
+            "note": ""
+          }
+        },
+        "s4": {
+          "type": "size",
+          "settings": {
+            "size": "300 x 200 cm",
+            "note": ""
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "heading": "Popular Baby Shower Backdrop Sizes"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I add the baby's name?",
+            "answer": "<p>Yes. Personalise any design with names, dates and custom messages.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Do you have gender reveal designs?",
+            "answer": "<p>Yes. We have both 'Boy or Girl?' reveal designs and individual 'It's a Boy/Girl' celebration banners.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Can I reuse the backdrop?",
+            "answer": "<p>Yes. Our banners are durable PVC and can be stored flat and reused for future events.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "heading": "Baby Shower Backdrop FAQ"
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Create the perfect baby shower backdrop",
+        "description": "Upload your artwork or contact us for a custom design.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "designs",
+    "quickbuy_roller",
+    "add_ons",
+    "uses",
+    "sizes",
+    "faq",
+    "cta"
+  ]
+}
