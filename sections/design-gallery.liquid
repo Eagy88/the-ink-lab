@@ -17,14 +17,14 @@
             {% if has_img1 or has_img2 %}
               <div class="design-gallery__image{% if has_img1 and has_img2 %} design-gallery__image--slides{% endif %}">
                 {%- if block.settings.image != blank -%}
-                  <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+                  <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.image_alt | default: block.settings.title }}" loading="lazy" width="600" height="400">
                 {%- elsif block.settings.fallback_asset != blank -%}
-                  <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+                  <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.image_alt | default: block.settings.title }}" loading="lazy" width="600" height="400">
                 {%- endif -%}
                 {%- if block.settings.image_2 != blank -%}
-                  <img src="{{ block.settings.image_2 | image_url: width: 600 }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+                  <img src="{{ block.settings.image_2 | image_url: width: 600 }}" alt="{{ block.settings.image_alt | default: block.settings.title }}" loading="lazy" width="600" height="400">
                 {%- elsif block.settings.fallback_asset_2 != blank -%}
-                  <img src="{{ block.settings.fallback_asset_2 | asset_url }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+                  <img src="{{ block.settings.fallback_asset_2 | asset_url }}" alt="{{ block.settings.image_alt | default: block.settings.title }}" loading="lazy" width="600" height="400">
                 {%- endif -%}
               </div>
             {% else %}
@@ -150,6 +150,12 @@
           "type": "text",
           "id": "fallback_asset",
           "label": "Fallback asset filename"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text (SEO)",
+          "info": "Describe the image for search engines and screen readers"
         },
         {
           "type": "image_picker",

@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Custom Label Printing UK",
+        "description": "Professional custom labels printed in the UK — product labels, packaging labels, bottle and jar labels, barcode labels and more. Gloss, matt and waterproof finishes, cut to any shape."
+      }
+    },
+    "types": {
+      "type": "service-types",
+      "settings": {
+        "heading": "Label Types We Print"
+      },
+      "blocks": {
+        "t1": {
+          "type": "service",
+          "settings": {
+            "title": "Product & packaging labels",
+            "description": "Retail-quality labels for bottles, jars, boxes and pouches — food-safe and durable finishes available."
+          }
+        },
+        "t2": {
+          "type": "service",
+          "settings": {
+            "title": "Waterproof labels",
+            "description": "Vinyl labels that survive fridges, freezers, bathrooms and outdoor use without fading or peeling."
+          }
+        },
+        "t3": {
+          "type": "service",
+          "settings": {
+            "title": "Roll labels",
+            "description": "Supplied on rolls for fast application by hand or machine — ideal for production runs."
+          }
+        },
+        "t4": {
+          "type": "service",
+          "settings": {
+            "title": "Contour-cut shapes",
+            "description": "Labels die-cut to your exact design — any shape, any size."
+          }
+        },
+        "t5": {
+          "type": "service",
+          "settings": {
+            "title": "Barcode & address labels",
+            "description": "Clear, scannable printing for logistics, shipping and inventory."
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5"]
+    },
+    "features": {
+      "type": "trust-points",
+      "settings": {},
+      "blocks": {
+        "f1": {
+          "type": "point",
+          "settings": {
+            "icon": "shield",
+            "text": "Printed in the UK, Lancashire based"
+          }
+        },
+        "f2": {
+          "type": "point",
+          "settings": {
+            "icon": "shield",
+            "text": "Gloss, matt and waterproof finishes"
+          }
+        },
+        "f3": {
+          "type": "point",
+          "settings": {
+            "icon": "shield",
+            "text": "Free artwork check on every order"
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Custom Label FAQs"
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What materials are your labels printed on?",
+            "answer": "<p>We print on premium paper and vinyl stocks with gloss, matt or waterproof laminate finishes. Vinyl labels are best for anything that gets wet or handled a lot.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Can you print labels in custom shapes and sizes?",
+            "answer": "<p>Yes — every label is cut to order, so any shape or size is possible, including contour-cutting around your design.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Do you deliver labels across the UK?",
+            "answer": "<p>Yes, we print and deliver custom labels across the whole of the UK, with free shipping when you spend £50 or more.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "How quickly can I get my labels?",
+            "answer": "<p>Standard turnaround is 2-3 working days, with next day options available when you need them fast.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to order custom labels?",
+        "description": "Upload your artwork or get in touch and we'll help with materials, sizing and finishes.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "types", "features", "faq", "cta"]
+}

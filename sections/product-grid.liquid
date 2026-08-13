@@ -11,11 +11,11 @@
         <a href="{{ block.settings.link }}" class="product-card" {{ block.shopify_attributes }}>
           {% if block.settings.image != blank %}
             <div class="product-card__image">
-              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.image_alt | default: block.settings.title }}" loading="lazy" width="600" height="400">
             </div>
           {% elsif block.settings.fallback_asset != blank %}
             <div class="product-card__image">
-              <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.title }}" loading="lazy" width="600" height="400">
+              <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.image_alt | default: block.settings.title }}" loading="lazy" width="600" height="400">
             </div>
           {% else %}
             <div class="product-card__image product-card__image--placeholder">
@@ -81,6 +81,12 @@
           "type": "text",
           "id": "fallback_asset",
           "label": "Fallback asset filename"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text (SEO)",
+          "info": "Describe the image, e.g. '2m x 1m PVC banner with eyelets, outdoor weatherproof'"
         }
       ]
     }

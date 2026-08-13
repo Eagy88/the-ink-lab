@@ -48,6 +48,12 @@
       </div>
     </div>
 
+    {% if section.settings.show_locations %}
+    <div class="footer__locations">
+      <p class="footer__text">{{ section.settings.locations_text }}</p>
+    </div>
+    {% endif %}
+
     <div class="footer__bottom">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
     </div>
@@ -57,6 +63,19 @@
 {% schema %}
 {
   "name": "Footer",
-  "settings": []
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_locations",
+      "label": "Show delivery locations strip",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "locations_text",
+      "label": "Delivery locations text",
+      "default": "Printing and delivering across the UK, including Lancaster, Preston, Blackburn, Burnley, Manchester, Liverpool and the whole of Lancashire and the North West."
+    }
+  ]
 }
 {% endschema %}

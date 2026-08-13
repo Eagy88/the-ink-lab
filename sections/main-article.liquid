@@ -1,0 +1,44 @@
+<article class="article">
+  <header class="page-hero">
+    <div class="container">
+      <p class="article__date">{{ article.published_at | date: '%-d %B %Y' }}</p>
+      <h1 class="page-hero__title">{{ article.title }}</h1>
+    </div>
+  </header>
+
+  {% if article.image %}
+    <div class="container article__image">
+      <img src="{{ article.image | image_url: width: 1400 }}" alt="{{ article.image.alt | default: article.title }}" width="1400" height="700">
+    </div>
+  {% endif %}
+
+  <div class="container article__body rte">
+    {{ article.content }}
+  </div>
+
+  <div class="container article__footer">
+    <a href="{{ blog.url }}" class="article__back">&larr; Back to all posts</a>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ article.title | json }},
+  "description": {{ article.excerpt_or_content | strip_html | truncate: 200 | json }},
+  {% if article.image %}"image": {{ article.image | image_url: width: 1200 | json }},{% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+  "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+  "author": { "@type": "Organization", "name": {{ shop.name | json }} },
+  "publisher": { "@id": "{{ shop.url }}#business" },
+  "mainEntityOfPage": "{{ shop.url }}{{ article.url }}"
+}
+</script>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}
