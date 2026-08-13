@@ -66,6 +66,7 @@
               {%- endfor -%}
             </select>
             <button type="button" class="btn btn--primary btn--lg js-design-add" id="design-add-btn">{{ section.settings.buy_button_text | default: 'Add to basket' }}</button>
+            {% render 'trust-strip', item_1: section.settings.trust_1, item_2: section.settings.trust_2, item_3: section.settings.trust_3 %}
             {%- if section.settings.buy_note != blank -%}
               <p class="design-gallery__or">{{ section.settings.buy_note }}</p>
             {%- endif -%}
@@ -118,6 +119,29 @@
       "id": "buy_note",
       "label": "Note under buy button",
       "default": "Pay securely, then upload your artwork after checkout."
+    },
+    {
+      "type": "header",
+      "content": "Trust signals",
+      "info": "Short reassurance points shown under the buy button. Leave blank to hide."
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust signal 1",
+      "default": "24–48hr turnaround"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust signal 2",
+      "default": "Printed in the UK"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust signal 3",
+      "default": "Free UK delivery over £50"
     }
   ],
   "blocks": [

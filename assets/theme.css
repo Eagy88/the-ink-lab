@@ -1822,3 +1822,22 @@ textarea.input { resize: vertical; min-height: 100px; }
 .article__body { max-width: 760px; padding: 2rem 1.5rem 3rem; }
 .article__footer { max-width: 760px; padding-bottom: 4rem; }
 .article__back { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+
+/* TRUST STRIP (near add-to-basket buttons) */
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.25rem;
+}
+.trust-strip__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+.trust-strip__item svg { color: var(--color-primary); flex-shrink: 0; }

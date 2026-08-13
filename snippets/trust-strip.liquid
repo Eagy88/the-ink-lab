@@ -1,0 +1,27 @@
+{%- comment -%}
+  Reusable trust strip shown near Add to Basket buttons.
+  Usage: {% render 'trust-strip', item_1: section.settings.trust_1, item_2: section.settings.trust_2, item_3: section.settings.trust_3 %}
+  Only renders items that are non-blank; renders nothing if all are blank.
+{%- endcomment -%}
+{%- if item_1 != blank or item_2 != blank or item_3 != blank -%}
+<div class="trust-strip">
+  {%- if item_1 != blank -%}
+    <span class="trust-strip__item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      {{ item_1 }}
+    </span>
+  {%- endif -%}
+  {%- if item_2 != blank -%}
+    <span class="trust-strip__item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      {{ item_2 }}
+    </span>
+  {%- endif -%}
+  {%- if item_3 != blank -%}
+    <span class="trust-strip__item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      {{ item_3 }}
+    </span>
+  {%- endif -%}
+</div>
+{%- endif -%}

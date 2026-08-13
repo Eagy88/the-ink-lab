@@ -43,6 +43,7 @@
           </div>
         {%- endfor -%}
       </div>
+      {% render 'trust-strip', item_1: section.settings.trust_1, item_2: section.settings.trust_2, item_3: section.settings.trust_3 %}
       {%- if section.settings.note != blank -%}
         <p class="pack-deals__note">{{ section.settings.note }}</p>
       {%- endif -%}
@@ -85,6 +86,29 @@
       "id": "note",
       "label": "Note under cards",
       "default": "Prices include eyelets. Savings shown vs. buying singles."
+    },
+    {
+      "type": "header",
+      "content": "Trust signals",
+      "info": "Short reassurance points shown under the buy buttons. Leave blank to hide."
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust signal 1",
+      "default": "24–48hr turnaround"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust signal 2",
+      "default": "Printed in the UK"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust signal 3",
+      "default": "Free UK delivery over £50"
     }
   ],
   "presets": [
