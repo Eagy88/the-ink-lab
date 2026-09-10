@@ -223,6 +223,80 @@
     });
   }
 
+  function initStickerBuilder() {
+    var app = document.getElementById('sticker-builder-app');
+    if (!app) return;
+
+    var jsonEl = document.getElementById('StickerProductJson');
+    var dataEl = document.getElementById('StickerProductData');
+    if (!jsonEl || !dataEl) return;
+
+    var variants = [];
+    var productData = {};
+    try {
+      variants = JSON.parse(jsonEl.textContent);
+      productData = JSON.parse(dataEl.textContent);
+    } catch(e) {
+      console.error('Failed to parse sticker product data');
+      return;
+    }
+
+    var inputs = app.querySelectorAll('input[type="radio"]');
+    var priceDisplay = document.getElementById('sb-price-display');
+    var addBtn = document.getElementById('sb-add-btn');
+
+    function updateState() {
+      var size = app.querySelector('input[name="sb_size"]:checked');
+      var shape = app.querySelector('input[name="sb_shape"]:checked');
+      var qty = app.querySelector('input[name="sb_qty"]:checked');
+
+      if (!size || !shape || !qty) {
+        priceDisplay.textContent = '--';
+        addBtn.disabled = true;
+        addBtn.textContent = 'Select options to buy';
+        return;
+      }
+
+      var selectedSize = size.value;
+      var selectedShape = shape.value;
+      var selectedQty = qty.value;
+
+      var matchedVariant = null;
+      for (var i = 0; i < variants.length; i++) {
+        var v = variants[i];
+        if (v.option1 === selectedSize && v.option2 === selectedShape && v.option3 === selectedQty) {
+          matchedVariant = v;
+          break;
+        }
+      }
+
+      if (matchedVariant) {
+        var priceStr = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(matchedVariant.price / 100);
+        priceDisplay.textContent = priceStr;
+        
+        if (matchedVariant.available) {
+          addBtn.disabled = false;
+          addBtn.textContent = 'Add to basket';
+          addBtn.dataset.variantId = matchedVariant.id;
+          addBtn.dataset.variantTitle = productData.title + ' — ' + matchedVariant.title;
+        } else {
+          addBtn.disabled = true;
+          addBtn.textContent = 'Sold out';
+          delete addBtn.dataset.variantId;
+        }
+      } else {
+        priceDisplay.textContent = '--';
+        addBtn.disabled = true;
+        addBtn.textContent = 'Unavailable';
+        delete addBtn.dataset.variantId;
+      }
+    }
+
+    inputs.forEach(function(input) {
+      input.addEventListener('change', updateState);
+    });
+  }
+
   function init() {
     initArtworkForm();
     initDesignGallery();
@@ -230,6 +304,7 @@
     initDesignSlides();
     initFaqAccordion();
     initAddToCart();
+    initStickerBuilder();
   }
 
   if (document.readyState === 'loading') {

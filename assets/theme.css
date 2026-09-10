@@ -1841,3 +1841,54 @@ textarea.input { resize: vertical; min-height: 100px; }
   white-space: nowrap;
 }
 .trust-strip__item svg { color: var(--color-primary); flex-shrink: 0; }
+
+/* STICKER BUILDER */
+.sticker-builder { padding: 4rem 0; background: var(--color-bg); }
+.sticker-builder__header { text-align: center; margin-bottom: 3rem; }
+.sticker-builder__app { max-width: 900px; margin: 0 auto; background: var(--color-bg-light); border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; }
+.sb-step { padding: 2rem; border-bottom: 1px solid var(--color-border); }
+.sb-step:last-of-type { border-bottom: none; }
+.sb-step__header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.sb-step__number { display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--color-primary); color: #fff; font-weight: 700; border-radius: 50%; flex-shrink: 0; }
+.sb-step__title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin: 0; }
+.sb-grid { display: grid; gap: 1rem; }
+.sb-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.sb-grid--5 { grid-template-columns: repeat(5, 1fr); }
+.sb-grid--3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) {
+  .sb-grid--4, .sb-grid--5, .sb-grid--3 { grid-template-columns: 1fr; }
+}
+.sb-card { position: relative; display: flex; cursor: pointer; }
+.sb-card__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.sb-card__inner { flex: 1; display: flex; flex-direction: column; padding: 1.25rem; background: #fff; border: 2px solid var(--color-border); border-radius: var(--radius); transition: all var(--transition); }
+.sb-card__input:checked + .sb-card__inner { border-color: var(--color-primary); box-shadow: 0 0 0 1px var(--color-primary); background: rgba(14,165,233,0.03); }
+.sb-card__input:focus-visible + .sb-card__inner { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.sb-card:hover .sb-card__inner { border-color: var(--color-primary-light); }
+.sb-card__title { font-family: var(--font-heading); font-weight: 700; font-size: 1.0625rem; margin-bottom: 0.25rem; }
+.sb-card__desc { font-size: 0.8125rem; color: var(--color-text-light); margin-bottom: 0.75rem; }
+.sb-card__list { font-size: 0.8125rem; color: var(--color-text-light); margin: 0; padding: 0 0 0 1rem; list-style: disc; }
+.sb-card__list li { margin-bottom: 0.25rem; }
+.sb-card__note { font-size: 0.75rem; color: var(--color-text-light); margin-top: 0.25rem; font-style: italic; }
+.sb-card--compact .sb-card__inner { padding: 1rem; text-align: center; align-items: center; justify-content: center; }
+.sb-card--compact .sb-card__title { margin: 0; }
+.sb-card--link { text-decoration: none; color: inherit; }
+.sb-card--link .sb-card__inner { background: var(--color-bg-dark); color: #fff; border-color: transparent; }
+.sb-card--link:hover .sb-card__inner { background: #000; }
+.sb-card--link .sb-card__desc { color: rgba(255,255,255,0.7); }
+.sb-card__action { margin-top: auto; font-size: 0.875rem; font-weight: 600; color: var(--color-primary-light); padding-top: 1rem; }
+
+.sb-result { display: flex; align-items: center; justify-content: space-between; padding: 2rem; background: #fff; flex-wrap: wrap; gap: 2rem; border-top: 1px solid var(--color-border); }
+.sb-result__price-wrap { display: flex; flex-direction: column; }
+.sb-result__label { font-size: 0.875rem; color: var(--color-text-light); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.sb-result__price { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--color-text); line-height: 1; margin-top: 0.25rem; }
+.sb-result__action { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+.sb-result__btn { min-width: 280px; }
+.sb-result__btn:disabled { background: var(--color-border); color: var(--color-text-light); cursor: not-allowed; box-shadow: none; transform: none; border-color: transparent; }
+.sb-result__trust { display: flex; justify-content: flex-end; width: 100%; }
+@media (max-width: 768px) {
+  .sb-result { flex-direction: column; align-items: stretch; }
+  .sb-result__action { align-items: stretch; }
+  .sb-result__btn { min-width: 100%; }
+  .sb-result__trust { justify-content: center; }
+}
+.sticker-builder__placeholder { padding: 2rem; border: 2px dashed #f59e0b; background: #fef3c7; color: #92400e; border-radius: var(--radius); text-align: center; max-width: 600px; margin: 0 auto; }

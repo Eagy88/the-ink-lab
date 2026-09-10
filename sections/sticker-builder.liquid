@@ -1,0 +1,244 @@
+<section class="sticker-builder" data-section-id="{{ section.id }}">
+  <div class="container">
+    {%- assign product = all_products[section.settings.product_handle] -%}
+
+    {%- if section.settings.heading != blank or section.settings.description != blank -%}
+      <div class="sticker-builder__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="section-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <p class="section-subheading">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if product != blank and product.id != blank -%}
+      <div class="sticker-builder__app" id="sticker-builder-app">
+        <script type="application/json" id="StickerProductJson">
+          {{ product.variants | json }}
+        </script>
+        <script type="application/json" id="StickerProductData">
+          {
+            "title": {{ product.title | json }}
+          }
+        </script>
+
+        <!-- Step 1: Size -->
+        <div class="sb-step" id="sb-step-size">
+          <div class="sb-step__header">
+            <span class="sb-step__number">1</span>
+            <h3 class="sb-step__title">Choose a size</h3>
+          </div>
+          <div class="sb-grid sb-grid--4">
+            <label class="sb-card">
+              <input type="radio" name="sb_size" value="Small" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Small</span>
+                <span class="sb-card__desc">Up to 50 &times; 50mm</span>
+                <ul class="sb-card__list">
+                  <li>Product labels</li>
+                  <li>Packaging</li>
+                  <li>Thank You stickers</li>
+                  <li>Logo stickers</li>
+                </ul>
+              </div>
+            </label>
+            <label class="sb-card">
+              <input type="radio" name="sb_size" value="Medium" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Medium</span>
+                <span class="sb-card__desc">Up to 75 &times; 75mm</span>
+                <ul class="sb-card__list">
+                  <li>Laptop stickers</li>
+                  <li>Water bottles</li>
+                  <li>Promotional giveaways</li>
+                  <li>Branding</li>
+                </ul>
+              </div>
+            </label>
+            <label class="sb-card">
+              <input type="radio" name="sb_size" value="Large" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Large</span>
+                <span class="sb-card__desc">Up to 100 &times; 100mm</span>
+                <ul class="sb-card__list">
+                  <li>Window stickers</li>
+                  <li>Large branding</li>
+                  <li>Packaging</li>
+                  <li>Vehicles</li>
+                </ul>
+              </div>
+            </label>
+            <a href="/pages/contact" class="sb-card sb-card--link">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Custom Size</span>
+                <span class="sb-card__desc">Need something specific?</span>
+                <span class="sb-card__action">Get a quote &rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 2: Shape -->
+        <div class="sb-step" id="sb-step-shape">
+          <div class="sb-step__header">
+            <span class="sb-step__number">2</span>
+            <h3 class="sb-step__title">Choose a shape</h3>
+          </div>
+          <div class="sb-grid sb-grid--5">
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_shape" value="Circle" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Circle</span>
+              </div>
+            </label>
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_shape" value="Square" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Square</span>
+              </div>
+            </label>
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_shape" value="Rectangle" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Rectangle</span>
+              </div>
+            </label>
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_shape" value="Oval" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Oval</span>
+              </div>
+            </label>
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_shape" value="Contour Cut" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">Contour Cut</span>
+                <span class="sb-card__note">Around your logo (+3p each)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3: Quantity -->
+        <div class="sb-step" id="sb-step-qty">
+          <div class="sb-step__header">
+            <span class="sb-step__number">3</span>
+            <h3 class="sb-step__title">Choose quantity</h3>
+          </div>
+          <div class="sb-grid sb-grid--3">
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_qty" value="100" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">100</span>
+              </div>
+            </label>
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_qty" value="200" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">200</span>
+              </div>
+            </label>
+            <label class="sb-card sb-card--compact">
+              <input type="radio" name="sb_qty" value="400" class="sb-card__input">
+              <div class="sb-card__inner">
+                <span class="sb-card__title">400</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Result / CTA Bar -->
+        <div class="sb-result">
+          <div class="sb-result__price-wrap">
+            <span class="sb-result__label">Total price</span>
+            <span class="sb-result__price" id="sb-price-display">--</span>
+          </div>
+          <div class="sb-result__action">
+            <button type="button" class="btn btn--primary btn--lg sb-result__btn js-add-to-cart" id="sb-add-btn" disabled>
+              Select options to buy
+            </button>
+            <div class="sb-result__trust">
+              {% render 'trust-strip', item_1: section.settings.trust_1, item_2: section.settings.trust_2, item_3: section.settings.trust_3 %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- else -%}
+      {%- if request.design_mode -%}
+        <div class="sticker-builder__placeholder">
+          <p><strong>Setup required:</strong> Product not found.</p>
+          <p>Please create a product with handle <code>{{ section.settings.product_handle }}</code>.</p>
+          <p>It needs exactly 3 options in this order:</p>
+          <ul style="margin: 1rem 0; text-align: left; display: inline-block;">
+            <li><strong>Size</strong>: Small, Medium, Large</li>
+            <li><strong>Shape</strong>: Circle, Square, Rectangle, Oval, Contour Cut</li>
+            <li><strong>Quantity</strong>: 100, 200, 400</li>
+          </ul>
+          <p>Base prices (for standard shapes):</p>
+          <ul style="margin: 1rem 0; text-align: left; display: inline-block;">
+            <li>Small: 100 &pound;14.99, 200 &pound;24.99, 400 &pound;39.99</li>
+            <li>Medium: 100 &pound;19.99, 200 &pound;34.99, 400 &pound;59.99</li>
+            <li>Large: 100 &pound;29.99, 200 &pound;49.99, 400 &pound;79.99</li>
+          </ul>
+          <p><em>Contour Cut total prices add 3p per sticker.</em></p>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sticker Builder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Build Your Stickers"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Choose your size, shape, and quantity for an instant quote."
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Shopify product handle",
+      "default": "custom-stickers"
+    },
+    {
+      "type": "header",
+      "content": "Trust signals",
+      "info": "Short reassurance points shown under the buy buttons. Leave blank to hide."
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust signal 1",
+      "default": "Premium waterproof vinyl"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust signal 2",
+      "default": "Printed in the UK"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust signal 3",
+      "default": "Fast turnaround"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticker Builder"
+    }
+  ]
+}
+{% endschema %}
