@@ -77,6 +77,14 @@
         "button_text": "Add to basket",
         "note": "Add-ons are optional and added separately to your basket."
       }
+    },
+    "sticker_builder": {
+      "type": "sticker-builder",
+      "settings": {
+        "heading": "Build Your Stickers",
+        "description": "Choose your size, shape and quantity. Pay securely, then upload your artwork.",
+        "product_handle": "custom-stickers"
+      }
     }
   },
   "order": [
