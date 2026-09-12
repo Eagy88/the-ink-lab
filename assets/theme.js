@@ -280,9 +280,11 @@
         priceDisplay.textContent = priceStr;
         if (unitPriceDisplay) {
           unitPriceDisplay.textContent = 'Approx. ' + new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: 'GBP',
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
-          }).format(matchedVariant.price / Number(selectedQty)) + 'p per sticker';
+          }).format(matchedVariant.price / 100 / Number(selectedQty)) + ' per sticker';
           unitPriceDisplay.hidden = false;
         }
         
