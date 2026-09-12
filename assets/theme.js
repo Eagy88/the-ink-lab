@@ -243,9 +243,14 @@
 
     var inputs = app.querySelectorAll('input[type="radio"]');
     var priceDisplay = document.getElementById('sb-price-display');
+    var unitPriceDisplay = document.getElementById('sb-unit-price');
     var addBtn = document.getElementById('sb-add-btn');
 
     function updateState() {
+      if (unitPriceDisplay) {
+        unitPriceDisplay.hidden = true;
+        unitPriceDisplay.textContent = '';
+      }
       var size = app.querySelector('input[name="sb_size"]:checked');
       var shape = app.querySelector('input[name="sb_shape"]:checked');
       var qty = app.querySelector('input[name="sb_qty"]:checked');
@@ -273,6 +278,13 @@
       if (matchedVariant) {
         var priceStr = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(matchedVariant.price / 100);
         priceDisplay.textContent = priceStr;
+        if (unitPriceDisplay) {
+          unitPriceDisplay.textContent = 'Approx. ' + new Intl.NumberFormat('en-GB', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          }).format(matchedVariant.price / Number(selectedQty)) + 'p per sticker';
+          unitPriceDisplay.hidden = false;
+        }
         
         if (matchedVariant.available) {
           addBtn.disabled = false;
