@@ -13,6 +13,8 @@
           <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}" loading="lazy" width="800">
         {%- elsif section.settings.image != blank -%}
           <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.heading | escape }}" loading="lazy" width="800">
+        {%- elsif section.settings.product_handle == 'premium-roller-banner' -%}
+          <img src="{{ 'premium-roller-banner-photo.png' | asset_url }}" alt="Premium roller banner displaying The Ink Lab’s colourful branding" loading="lazy" width="745" height="1024">
         {%- else -%}
           <div class="rb-product__media-placeholder">{{ 'image' | placeholder_svg_tag }}</div>
         {%- endif -%}
