@@ -1,0 +1,11 @@
+.header-socials { flex: 1; display: flex; align-items: center; gap: 8px; }
+.header-socials a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: #0284c7; background: #f0f9ff; animation: social-glow 4s ease-in-out infinite; }
+.header-socials svg { width: 21px; height: 21px; }
+.header-socials a:hover { color: #075985; background: #e0f2fe; }
+.header-socials a:focus-visible { outline: 3px solid #0284c7; outline-offset: 4px; }
+@keyframes social-glow { 0%, 100% { box-shadow: 0 0 3px rgba(14,165,233,.12); } 50% { box-shadow: 0 0 15px rgba(14,165,233,.45); } }
+@media (max-width: 768px) {
+  .header__inner { flex-wrap: wrap; row-gap: 8px; }
+  .header-socials { order: 3; flex: 0 0 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .header-socials a { animation: none; } }
