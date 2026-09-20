@@ -9,7 +9,11 @@
     },
     "estimator": {
       "type": "backlit-estimator",
-      "settings": {}
+      "settings": {
+        "heading": "Choose Your Backlit Graphics",
+        "product_active": true,
+        "discounts_active": false
+      }
     },
     "uses": {
       "type": "uses-list",
@@ -115,7 +119,7 @@
           "type": "question",
           "settings": {
             "question": "How do I order?",
-            "answer": "<p>Use the estimator above to check your estimate, then follow the <strong>Configure &amp; Buy</strong> button when online ordering is available. If it is not shown, please use the contact form to request a quote. We will confirm your dimensions and artwork before printing.</p>"
+            "answer": "<p>Choose a standard size or enter your custom dimensions, select a finish and quantity, then use <strong>Add to basket</strong>. If your option is unavailable, request a quote. Width, height and finish are saved with your order, and we check your artwork before printing.</p>"
           }
         }
       },

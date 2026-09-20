@@ -166,6 +166,23 @@
   text-align: center;
 }
 
+.be-result-status {
+  min-height: 1.25rem;
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.be-result-status a {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.backlit-estimator [hidden] {
+  display: none !important;
+}
+
 .be-result-quote {
   background: var(--color-bg-light);
   padding: 1.5rem;

@@ -27,31 +27,10 @@
           <li>✓ Printed in the UK</li>
         </ul>
 
-        <div class="backlit-product__app-slot">
-          {%- assign has_app_block = false -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == '@app' -%}
-              {%- assign has_app_block = true -%}
-              {% render block %}
-            {%- endif -%}
-          {%- endfor -%}
-
-          {%- if request.design_mode -%}
-            <div class="backlit-product__setup-notice">
-              <h4>Theme Editor Notice</h4>
-              <p>To enable online ordering with custom dimensions, add the <strong>Apippa Custom Pricing</strong> app block to this section in the theme editor.</p>
-              <p>The standard Add to Cart button has been removed intentionally to prevent bypassing the custom price calculation.</p>
-            </div>
-          {%- endif -%}
-
-          {%- unless has_app_block -%}
-            <div class="backlit-product__pending">
-              <h3>Online Ordering Pending Setup</h3>
-              <p>We are currently setting up our custom sizing tool for this product.</p>
-              <p>In the meantime, you can request a custom quote directly from our team.</p>
-              <a href="/pages/contact" class="btn btn--primary btn--lg" style="margin-top: 1rem;">Request a Quote</a>
-            </div>
-          {%- endunless -%}
+        <div class="backlit-product__order-link">
+          <h3>Choose your size and finish</h3>
+          <p>Use the backlit graphics order calculator for standard or custom dimensions.</p>
+          <a href="/pages/backlit-graphics#backlit-order" class="btn btn--primary btn--lg">Price &amp; Order</a>
         </div>
 
         <div class="backlit-product__artwork-reqs">
@@ -83,11 +62,6 @@
       "id": "description",
       "label": "Description",
       "default": "Premium translucent graphics specifically designed for LED lightboxes and illuminated displays."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "@app"
     }
   ],
   "presets": [
