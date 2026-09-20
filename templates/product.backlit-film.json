@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "backlit-product",
+      "settings": {
+        "title": "Backlit Film Printing – LED Lightbox Graphics",
+        "description": "Premium translucent graphics specifically designed for LED lightboxes and illuminated displays. Graphic only — lightbox, frame and lighting are not included."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

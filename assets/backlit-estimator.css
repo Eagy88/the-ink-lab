@@ -1,0 +1,197 @@
+.backlit-estimator {
+  padding: 4rem 0;
+  background: var(--color-bg-light);
+}
+
+.backlit-estimator__wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .backlit-estimator__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .backlit-estimator__content { display: contents; }
+  .backlit-estimator__wrapper > *,
+  .backlit-estimator__content > * { width: 100%; min-width: 0; }
+  .backlit-estimator__result-card { order: 1; }
+  .backlit-estimator__pricing { order: 2; }
+  .backlit-estimator__artwork-reqs { order: 3; }
+}
+
+.backlit-estimator__heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.backlit-estimator__subheading {
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.backlit-estimator__pricing,
+.backlit-estimator__artwork-reqs {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.backlit-estimator__pricing h3,
+.backlit-estimator__artwork-reqs h3 {
+  margin: 0 0 1rem;
+  font-family: var(--font-heading);
+}
+
+.backlit-estimator__pricing table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+.backlit-estimator__pricing th,
+.backlit-estimator__pricing td {
+  padding: .45rem .5rem;
+  border-bottom: 1px solid var(--color-border-light);
+  text-align: left;
+}
+
+.backlit-estimator__pricing td { text-align: right; }
+.backlit-estimator__breaks-heading {
+  margin: 1.25rem 0 .5rem;
+  font-size: 1rem;
+}
+.backlit-estimator__breaks caption {
+  text-align: left;
+  font-size: .8rem;
+  color: var(--color-text-light);
+  margin-bottom: .25rem;
+}
+.backlit-estimator__pricing-note,
+.backlit-estimator__artwork-reqs p {
+  margin: 1rem 0 0;
+  font-size: .875rem;
+  line-height: 1.5;
+}
+
+.backlit-estimator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.be-qty-discount-note {
+  font-size: 0.8125rem;
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.backlit-estimator__notice {
+  background: rgba(14, 165, 233, 0.1);
+  border-left: 4px solid var(--color-primary);
+  padding: 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.875rem;
+  color: var(--color-text-dark);
+}
+
+.backlit-estimator__notice p {
+  margin-bottom: 0.25rem;
+}
+.backlit-estimator__notice p:last-child {
+  margin-bottom: 0;
+}
+
+.backlit-estimator__result-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.be-result-title {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.be-result-price {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.be-result-unit {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.be-result-action {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.be-result-action .btn {
+  width: 100%;
+}
+
+.be-result-pending {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.be-result-quote {
+  background: var(--color-bg-light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.be-result-quote p {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.be-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1.5rem;
+}
+
+.be-features li {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

@@ -3,14 +3,18 @@
     "hero": {
       "type": "page-hero",
       "settings": {
-        "heading": "Backlit Graphics",
-        "description": "Illuminated graphics for lightboxes, retail displays, menus and branded interiors. Designed to look sharp and vibrant when lit from behind."
+        "heading": "Backlit Film Printing – LED Lightbox Graphics",
+        "description": "Custom printed translucent backlit film for LED lightboxes, menu displays, retail signage, fake windows and illuminated displays. Designed to look sharp and vibrant when lit from behind."
       }
+    },
+    "estimator": {
+      "type": "backlit-estimator",
+      "settings": {}
     },
     "uses": {
       "type": "uses-list",
       "settings": {
-        "heading": "Best For"
+        "heading": "Perfect For"
       },
       "blocks": {
         "u1": {
@@ -22,25 +26,55 @@
         "u2": {
           "type": "use",
           "settings": {
-            "text": "Menu displays"
+            "text": "Restaurant menu boards"
           }
         },
         "u3": {
           "type": "use",
           "settings": {
-            "text": "Salon or clinic signage"
+            "text": "Salon price displays"
           }
         },
         "u4": {
           "type": "use",
           "settings": {
-            "text": "Exhibition stands"
+            "text": "Cinema/theatre displays"
           }
         },
         "u5": {
           "type": "use",
           "settings": {
-            "text": "Illuminated branding"
+            "text": "Exhibition lightboxes"
+          }
+        },
+        "u6": {
+          "type": "use",
+          "settings": {
+            "text": "Illuminated advertising"
+          }
+        },
+        "u7": {
+          "type": "use",
+          "settings": {
+            "text": "LED fake windows"
+          }
+        },
+        "u8": {
+          "type": "use",
+          "settings": {
+            "text": "Sky & cloud window displays"
+          }
+        },
+        "u9": {
+          "type": "use",
+          "settings": {
+            "text": "Office light panels"
+          }
+        },
+        "u10": {
+          "type": "use",
+          "settings": {
+            "text": "Replacement lightbox graphics"
           }
         }
       },
@@ -49,7 +83,12 @@
         "u2",
         "u3",
         "u4",
-        "u5"
+        "u5",
+        "u6",
+        "u7",
+        "u8",
+        "u9",
+        "u10"
       ]
     },
     "faq": {
@@ -62,21 +101,21 @@
           "type": "question",
           "settings": {
             "question": "What are backlit graphics?",
-            "answer": "<p>Backlit graphics are printed on translucent material designed to be illuminated from behind, creating vibrant and eye-catching displays.</p>"
+            "answer": "<p>Backlit graphics are printed on premium translucent film designed to be illuminated from behind, creating vibrant and eye-catching displays. They are perfect for LED lightboxes and indoor illuminated signage.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
             "question": "What sizes can you produce?",
-            "answer": "<p>We can produce custom sizes to fit your lightbox. Get in touch with your dimensions for a quote.</p>"
+            "answer": "<p>We offer standard sizes from A4 up to A0, plus popular lightbox sizes like 600×1200mm. We also print fully custom sizes. Use our estimator above to get an estimate for your specific dimensions.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "How do I order backlit graphics?",
-            "answer": "<p>Contact us with your lightbox dimensions and upload your artwork. We'll confirm the spec and get your order started.</p>"
+            "question": "How do I order?",
+            "answer": "<p>Use the estimator above to check your estimate, then follow the <strong>Configure &amp; Buy</strong> button when online ordering is available. If it is not shown, please use the contact form to request a quote. We will confirm your dimensions and artwork before printing.</p>"
           }
         }
       },
@@ -86,30 +125,32 @@
         "q3"
       ]
     },
-    "cta": {
-      "type": "cta-banner",
-      "settings": {
-        "heading": "Need backlit graphics?",
-        "description": "Get in touch with your lightbox dimensions and we'll provide a custom quote.",
-        "button_1_text": "Upload Artwork",
-        "button_1_link": "/pages/upload-artwork",
-        "button_2_text": "Get a Quote",
-        "button_2_link": "/pages/contact"
-      }
-    },
     "add_ons": {
       "type": "add-ons",
       "settings": {
         "heading": "Optional Extras & Design Services",
         "description": "Add finishing options or let our team handle your artwork. Just add them to your basket alongside your order.",
         "product_handle": "add-on-services",
+        "hide_options": "Pole Pockets",
         "button_text": "Add to basket",
         "note": "Add-ons are optional and added separately to your basket."
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Need backlit graphics?",
+        "description": "Get an instant price using our estimator or contact us for unusual projects and high volume orders.",
+        "button_1_text": "Upload Artwork",
+        "button_1_link": "/pages/upload-artwork",
+        "button_2_text": "Get a Quote",
+        "button_2_link": "/pages/contact"
       }
     }
   },
   "order": [
     "hero",
+    "estimator",
     "uses",
     "faq",
     "add_ons",

@@ -1,0 +1,179 @@
+<section class="backlit-estimator" data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="backlit-estimator__wrapper">
+      <div class="backlit-estimator__content">
+        <h2 class="backlit-estimator__heading">{{ section.settings.heading }}</h2>
+        <p class="backlit-estimator__subheading">{{ section.settings.description }}</p>
+        <p><strong>Backlit film printing from £9.99</strong> — graphic only; lightbox and lighting not included.</p>
+
+        <div class="backlit-estimator__form" id="backlit-estimator-form">
+          <div class="form-field">
+            <label for="be-size">Size</label>
+            <select id="be-size" class="input">
+              <option value="A4" data-w="210" data-h="297" data-price="9.99">A4 (210 × 297mm) - £9.99</option>
+              <option value="A3" data-w="297" data-h="420" data-price="12.99">A3 (297 × 420mm) - £12.99</option>
+              <option value="A2" data-w="420" data-h="594" data-price="16.99">A2 (420 × 594mm) - £16.99</option>
+              <option value="A1" data-w="594" data-h="841" data-price="24.99">A1 (594 × 841mm) - £24.99</option>
+              <option value="A0" data-w="841" data-h="1189" data-price="39.99">A0 (841 × 1189mm) - £39.99</option>
+              <option value="500x700" data-w="500" data-h="700" data-price="19.99">500 × 700mm - £19.99</option>
+              <option value="600x900" data-w="600" data-h="900" data-price="27.99">600 × 900mm - £27.99</option>
+              <option value="600x1200" data-w="600" data-h="1200" data-price="34.99">600 × 1200mm - £34.99</option>
+              <option value="700x1000" data-w="700" data-h="1000" data-price="34.99">700 × 1000mm - £34.99</option>
+              <option value="30x40" data-w="762" data-h="1016" data-price="36.99">30 × 40in (762 × 1016mm) - £36.99</option>
+              <option value="40x60" data-w="1016" data-h="1524" data-price="64.99">40 × 60in (1016 × 1524mm) - £64.99</option>
+              <option value="Custom" data-custom="true">Custom Size</option>
+            </select>
+          </div>
+
+          <div class="form-row" id="be-custom-dims" style="display: none;">
+            <div class="form-field">
+              <label for="be-width">Width (mm)</label>
+              <input type="number" id="be-width" class="input" min="1" placeholder="e.g. 800">
+            </div>
+            <div class="form-field">
+              <label for="be-height">Height (mm)</label>
+              <input type="number" id="be-height" class="input" min="1" placeholder="e.g. 1000">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="be-finish">Finish</label>
+            <select id="be-finish" class="input">
+              <option value="trimmed">Trimmed to size — included</option>
+              <option value="matt">Matt lamination — +£8/m²</option>
+              <option value="gloss">Gloss lamination — +£8/m²</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="be-qty">Quantity</label>
+            <input type="number" id="be-qty" class="input" min="1" value="1">
+            <div class="be-qty-discount-note" id="be-qty-note"></div>
+          </div>
+          
+          <div class="backlit-estimator__notice">
+            <p><strong>Please note:</strong> This calculator is for estimation only.</p>
+            {%- assign ordering_product = all_products[section.settings.product_handle] -%}
+            {%- if section.settings.product_active and ordering_product != blank and ordering_product.id != blank and ordering_product.available -%}
+              <p>You will re-enter your dimensions on the product page to complete your order.</p>
+            {%- else -%}
+              <p>Online ordering is pending setup. Please contact us to confirm your dimensions and request a quote.</p>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="backlit-estimator__pricing">
+          <h3>Standard size pricing</h3>
+          <table>
+            <caption>Trimmed-to-size backlit film, one print</caption>
+            <thead><tr><th scope="col">Size</th><th scope="col">Price</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A4</th><td>£9.99</td></tr>
+              <tr><th scope="row">A3</th><td>£12.99</td></tr>
+              <tr><th scope="row">A2</th><td>£16.99</td></tr>
+              <tr><th scope="row">A1</th><td>£24.99</td></tr>
+              <tr><th scope="row">A0</th><td>£39.99</td></tr>
+              <tr><th scope="row">500 × 700mm</th><td>£19.99</td></tr>
+              <tr><th scope="row">600 × 900mm</th><td>£27.99</td></tr>
+              <tr><th scope="row">600 × 1200mm</th><td>£34.99</td></tr>
+              <tr><th scope="row">700 × 1000mm</th><td>£34.99</td></tr>
+              <tr><th scope="row">30 × 40in</th><td>£36.99</td></tr>
+              <tr><th scope="row">40 × 60in</th><td>£64.99</td></tr>
+            </tbody>
+          </table>
+          <h4 class="backlit-estimator__breaks-heading">Quantity breaks</h4>
+          <table class="backlit-estimator__breaks">
+            <caption>Discounts apply to the per-print price</caption>
+            <thead><tr><th scope="col">Quantity</th><th scope="col">Saving</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>Standard price</td></tr>
+              <tr><th scope="row">2–4</th><td>5% off</td></tr>
+              <tr><th scope="row">5–9</th><td>10% off</td></tr>
+              <tr><th scope="row">10–24</th><td>15% off</td></tr>
+              <tr><th scope="row">25–49</th><td>20% off</td></tr>
+              <tr><th scope="row">50+</th><td>Trade quote</td></tr>
+            </tbody>
+          </table>
+          <p class="backlit-estimator__pricing-note">Custom sizes are calculated at £44.99/m², rounded up to price points of £14.99, £19.99, £24.99 and so on in £5 steps, with a £14.99 minimum per graphic before finish and quantity discounts. For unusually large dimensions, contact us to confirm production suitability. Standard turnaround is <strong>24–48 hours</strong>.</p>
+        </div>
+
+        <div class="backlit-estimator__artwork-reqs">
+          <h3>Artwork requirements</h3>
+          <p>PDF is preferred. High-resolution JPG, PNG, TIFF, AI and EPS files are also accepted.</p>
+          <p>Supply artwork at the ordered dimensions where possible, with 3mm bleed where required and important text/logos at least 10mm from the finished edge. For photographs, send the highest-resolution original available.</p>
+          <p>Need artwork help? Our team can check your file before print.</p>
+        </div>
+      </div>
+      
+      <div class="backlit-estimator__result-card">
+        <h3 class="be-result-title">Estimated Total</h3>
+        <div class="be-result-price" id="be-total-price" aria-live="polite">£9.99</div>
+        <div class="be-result-unit" id="be-unit-price">£9.99 each</div>
+        
+        <div class="be-result-quote" id="be-quote-msg" style="display: none;">
+          <p>For quantities over 49 or unusually large jobs, please contact us for a custom trade quote.</p>
+          <a href="/pages/contact" class="btn btn--outline">Contact Us</a>
+        </div>
+
+        <div class="be-result-action" id="be-action-wrap">
+          {%- assign ordering_product = all_products[section.settings.product_handle] -%}
+          {%- if section.settings.product_active and ordering_product != blank and ordering_product.id != blank and ordering_product.available -%}
+            <a href="{{ ordering_product.url }}" class="btn btn--primary btn--lg">Configure & Buy</a>
+          {%- else -%}
+            <a href="/pages/contact" class="btn btn--outline btn--lg">Request a Quote</a>
+            <p class="be-result-pending">Online ordering is pending setup. Please request a quote.</p>
+          {%- endif -%}
+        </div>
+
+        <ul class="be-features">
+          <li>✓ Premium translucent backlit film (Duratrans-style)</li>
+          <li>✓ Designed specifically for LED lightboxes</li>
+          <li>✓ Vibrant colour when illuminated</li>
+          <li>✓ Indoor display use</li>
+          <li>✓ Free artwork check</li>
+          <li>✓ UK printed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'backlit-estimator.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'backlit-estimator.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Backlit Estimator",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get an Instant Estimate"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Select a standard size or enter your custom dimensions below to see estimated pricing."
+    },
+    {
+      "type": "checkbox",
+      "id": "product_active",
+      "label": "Enable Online Ordering (App Installed)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Product Handle",
+      "default": "backlit-film-printing"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Backlit Estimator"
+    }
+  ]
+}
+{% endschema %}

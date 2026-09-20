@@ -1,0 +1,99 @@
+<section class="backlit-product" data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="backlit-product__grid">
+      <div class="backlit-product__gallery">
+        {%- if product.featured_image -%}
+          <img src="{{ product.featured_image | image_url: width: 800 }}" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" class="backlit-product__image">
+        {%- else -%}
+          <div class="backlit-product__image-placeholder" role="img" aria-label="Illustration of translucent backlit film for an LED lightbox">
+            <span class="backlit-product__film-illustration" aria-hidden="true"></span>
+            <span>Translucent backlit film for LED lightboxes</span>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="backlit-product__details">
+        <h1 class="backlit-product__title">{{ section.settings.title | default: product.title }}</h1>
+        
+        {%- if section.settings.description != blank -%}
+          <p class="backlit-product__description">{{ section.settings.description }}</p>
+        {%- endif -%}
+
+        <ul class="backlit-product__features">
+          <li>✓ Premium translucent backlit film (Duratrans-style)</li>
+          <li>✓ Designed specifically for LED lightboxes</li>
+          <li>✓ Free artwork check</li>
+          <li>✓ 24–48hr turnaround</li>
+          <li>✓ Printed in the UK</li>
+        </ul>
+
+        <div class="backlit-product__app-slot">
+          {%- assign has_app_block = false -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == '@app' -%}
+              {%- assign has_app_block = true -%}
+              {% render block %}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if request.design_mode -%}
+            <div class="backlit-product__setup-notice">
+              <h4>Theme Editor Notice</h4>
+              <p>To enable online ordering with custom dimensions, add the <strong>Apippa Custom Pricing</strong> app block to this section in the theme editor.</p>
+              <p>The standard Add to Cart button has been removed intentionally to prevent bypassing the custom price calculation.</p>
+            </div>
+          {%- endif -%}
+
+          {%- unless has_app_block -%}
+            <div class="backlit-product__pending">
+              <h3>Online Ordering Pending Setup</h3>
+              <p>We are currently setting up our custom sizing tool for this product.</p>
+              <p>In the meantime, you can request a custom quote directly from our team.</p>
+              <a href="/pages/contact" class="btn btn--primary btn--lg" style="margin-top: 1rem;">Request a Quote</a>
+            </div>
+          {%- endunless -%}
+        </div>
+
+        <div class="backlit-product__artwork-reqs">
+          <h3>Artwork Requirements</h3>
+          <p><strong>PDF is preferred</strong>, with high-resolution JPG, PNG, TIFF, AI and EPS also accepted.</p>
+          <p>For photographs, supply the highest-resolution original available.</p>
+          <p>Artwork should be supplied at the ordered dimensions where possible.</p>
+          <p>Allow <strong>3mm bleed</strong> around the artwork where required and keep important text/logos at least <strong>10mm from the finished edge</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'backlit-product.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Backlit Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Custom Title",
+      "info": "Overrides the default product title if set."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Premium translucent graphics specifically designed for LED lightboxes and illuminated displays."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Backlit Product"
+    }
+  ]
+}
+{% endschema %}

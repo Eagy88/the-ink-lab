@@ -8,10 +8,20 @@
     {%- endif -%}
 
     {%- assign product = all_products[section.settings.product_handle] -%}
+    {%- assign hidden_options = section.settings.hide_options | split: ',' -%}
 
     {%- if product != blank and product.id != blank -%}
       <div class="add-ons__grid">
         {%- for variant in product.variants -%}
+          {%- assign variant_title_downcase = variant.title | downcase -%}
+          {%- assign hide_variant = false -%}
+          {%- for hidden_option in hidden_options -%}
+            {%- assign hidden_option_downcase = hidden_option | strip | downcase -%}
+            {%- if hidden_option_downcase != blank and variant_title_downcase == hidden_option_downcase -%}
+              {%- assign hide_variant = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- unless hide_variant -%}
           <div class="add-ons__card">
             <div class="add-ons__info">
               <span class="add-ons__name">{{ variant.title }}</span>
@@ -32,6 +42,7 @@
               <button type="button" class="btn add-ons__add" disabled>Unavailable</button>
             {%- endif -%}
           </div>
+          {%- endunless -%}
         {%- endfor -%}
       </div>
       {% render 'trust-strip', item_1: section.settings.trust_1, item_2: section.settings.trust_2, item_3: section.settings.trust_3 %}
@@ -71,6 +82,12 @@
       "label": "Shopify product handle",
       "info": "The handle of the add-on product whose options you want to sell here (e.g. add-on-services).",
       "default": "add-on-services"
+    },
+    {
+      "type": "text",
+      "id": "hide_options",
+      "label": "Options to hide",
+      "info": "Comma-separated list of variant titles to hide on this page (e.g. Pole Pockets)."
     },
     {
       "type": "text",
