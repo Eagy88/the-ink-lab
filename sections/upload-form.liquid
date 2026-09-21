@@ -12,88 +12,40 @@
             <span class="tag">PDF</span>
             <span class="tag">AI</span>
             <span class="tag">EPS</span>
+            <span class="tag">SVG</span>
+            <span class="tag">PSD</span>
+            <span class="tag">TIFF</span>
             <span class="tag">JPG</span>
             <span class="tag">PNG</span>
+            <span class="tag">ZIP</span>
           </div>
         </div>
         <div class="upload-form__steps">
           <h3>How it works</h3>
           <ol class="upload-form__steps-list">
-            <li>Fill in the form with your details and order info</li>
-            <li>Attach your artwork file(s)</li>
-            <li>Click "Send Artwork" — this opens your email with everything ready</li>
-            <li>We'll confirm receipt and get your order into production</li>
+            <li>Open The Ink Lab's secure artwork uploader</li>
+            <li>Verify your order using its number and checkout email, then select the item</li>
+            <li>Add up to 10 artwork files for the selected item or items</li>
+            <li>Send files directly to our private production storage</li>
+            <li>Keep your upload confirmation reference; we'll check your artwork before printing</li>
           </ol>
         </div>
         <p class="upload-form__help">Need design help? <a href="/pages/contact">Get in touch</a> and we can point you in the right direction.</p>
       </div>
       <div class="upload-form__card">
         <div class="upload-form__form" id="artwork-form">
-          <div class="form-field">
-            <label for="upload-name">Your name</label>
-            <input type="text" id="upload-name" placeholder="Your full name" class="input" required>
-          </div>
-
-          <div class="form-field">
-            <label for="upload-email">Email address</label>
-            <input type="email" id="upload-email" placeholder="you@example.com" class="input" required>
-          </div>
-
-          <div class="form-field">
-            <label for="upload-business">Business name</label>
-            <input type="text" id="upload-business" placeholder="Your business name" class="input">
-          </div>
-
-          <div class="form-field">
-            <label for="upload-order">Order or quote reference (if you have one)</label>
-            <input type="text" id="upload-order" placeholder="e.g. INK-1234" class="input">
-          </div>
-
-          <div class="form-field">
-            <label for="upload-product">What product is this artwork for?</label>
-            <select id="upload-product" class="input">
-              <option value="">Select a product...</option>
-              <option value="PVC Banner">PVC Banner</option>
-              <option value="Mesh Banner">Mesh Banner</option>
-              <option value="Roller Banner">Roller Banner</option>
-              <option value="Window Graphics">Window Graphics</option>
-              <option value="Backlit Graphics">Backlit Graphics</option>
-              <option value="Stickers & Labels">Stickers & Labels</option>
-              <option value="Birthday Banner">Birthday Banner</option>
-              <option value="Wedding Backdrop">Wedding Backdrop</option>
-              <option value="Engagement Backdrop">Engagement Backdrop</option>
-              <option value="Baby Shower">Baby Shower</option>
-              <option value="Exhibition Display Kit">Exhibition Display Kit</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="upload-width">Width (cm)</label>
-              <input type="number" id="upload-width" placeholder="e.g. 200" class="input">
-            </div>
-            <div class="form-field">
-              <label for="upload-height">Height (cm)</label>
-              <input type="number" id="upload-height" placeholder="e.g. 100" class="input">
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="upload-qty">Quantity</label>
-            <input type="number" id="upload-qty" placeholder="e.g. 1" min="1" class="input">
-          </div>
-
-          <div class="form-field">
-            <label for="upload-notes">Additional notes</label>
-            <textarea id="upload-notes" rows="4" placeholder="Any details about finishing, materials, delivery dates..." class="input"></textarea>
-          </div>
-
-          <a href="#" id="artwork-send-btn" class="btn btn--primary btn--lg upload-form__submit-btn">
+          <h2>{{ section.settings.button_heading }}</h2>
+          <p>{{ section.settings.button_description }}</p>
+          {%- if section.settings.upload_app_url != blank -%}
+          <a href="{{ section.settings.upload_app_url | escape }}" data-artwork-upload-link class="btn btn--primary btn--lg upload-form__submit-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            Send Artwork via Email
+            Open Secure Artwork Uploader
           </a>
-          <p class="upload-form__note">This will open your email app with the details filled in. Just attach your artwork file(s) and hit send.</p>
+          <p class="upload-form__note">The secure uploader opens outside the shop and accepts files up to 2GB each. You will receive a clear confirmation reference when the transfer is complete.</p>
+          <p class="upload-form__note">Not ordered yet? Choose “I’m uploading before ordering” in the uploader. These files remain unlinked until you provide the upload reference with your order.</p>
+          {%- else -%}
+          <p role="status">Online artwork uploads are temporarily unavailable. Please check back shortly or <a href="{{ routes.root_url }}pages/contact">contact us for help</a>.</p>
+          {%- endif -%}
         </div>
       </div>
     </div>
@@ -114,7 +66,25 @@
       "type": "textarea",
       "id": "description",
       "label": "Description",
-      "default": "Send your file now and we'll match it to your order, or upload first and confirm the print details after."
+      "default": "Upload files directly to us and link them to your order using your order number and checkout email."
+    },
+    {
+      "type": "text",
+      "id": "button_heading",
+      "label": "Uploader heading",
+      "default": "Ready to send your artwork?"
+    },
+    {
+      "type": "textarea",
+      "id": "button_description",
+      "label": "Uploader description",
+      "default": "Use our secure hosted uploader to send large, print-ready files directly to The Ink Lab."
+    },
+    {
+      "type": "url",
+      "id": "upload_app_url",
+      "label": "Hosted upload app URL",
+      "info": "Use the public, published /upload-artwork URL. Customers must be able to open it without a Replit login. Leave blank until ready."
     }
   ],
   "presets": [

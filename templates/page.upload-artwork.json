@@ -4,7 +4,8 @@
       "type": "upload-form",
       "settings": {
         "heading": "Upload Artwork",
-        "description": "Send your file now and we'll match it to your order, or upload first and confirm the print details after."
+        "description": "Upload files directly to us and link them to your order using your order number and checkout email.",
+        "upload_app_url": "https://the-ink-lab.replit.app/upload-artwork"
       }
     },
     "add_ons": {
