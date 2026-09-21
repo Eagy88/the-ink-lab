@@ -1,9 +1,7 @@
 {{ 'header-socials.css' | asset_url | stylesheet_tag }}
-{% if request.page_type == 'index' %}
-  {{ 'header-artwork.css' | asset_url | stylesheet_tag }}
-{% endif %}
+{{ 'header-artwork.css' | asset_url | stylesheet_tag }}
 <header class="header">
-  <div class="container header__inner{% if request.page_type == 'index' %} header__inner--artwork{% endif %}">
+  <div class="container header__inner header__inner--artwork">
     {% render 'header-socials' %}
     <a href="/" class="header__logo">
       {% if section.settings.logo != blank %}
@@ -14,9 +12,7 @@
     </a>
     <div class="header__actions">
       <a href="/pages/contact" class="btn btn--outline btn--sm header__quote">Get Quote</a>
-      {% if request.page_type == 'index' %}
-        <a href="{{ routes.root_url }}pages/upload-artwork" class="btn btn--primary btn--sm header__quote">Upload Artwork</a>
-      {% endif %}
+      <a href="{{ routes.root_url }}pages/upload-artwork" class="btn btn--primary btn--sm header__quote">Upload Artwork</a>
       <a href="{{ routes.cart_url }}" class="header__cart" aria-label="Basket">
         <svg class="header__cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="9" cy="21" r="1"></circle>

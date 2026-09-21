@@ -7,10 +7,14 @@
       {% endif %}
       <div class="cta-banner__actions">
         {% if section.settings.button_1_text != blank %}
+          {% unless section.settings.button_1_link contains '/pages/upload-artwork' or section.settings.button_1_text == 'Upload Artwork' %}
           <a href="{{ section.settings.button_1_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_1_text }}</a>
+          {% endunless %}
         {% endif %}
         {% if section.settings.button_2_text != blank %}
+          {% unless section.settings.button_2_link contains '/pages/upload-artwork' or section.settings.button_2_text == 'Upload Artwork' %}
           <a href="{{ section.settings.button_2_link }}" class="btn btn--outline btn--lg">{{ section.settings.button_2_text }}</a>
+          {% endunless %}
         {% endif %}
       </div>
     </div>

@@ -1,4 +1,4 @@
-/* Keep the homepage upload and quote actions together without crowding the logo. */
+/* Keep the upload and quote actions together without crowding the logo on every page. */
 @media (max-width: 1000px) {
   .header__inner--artwork .header__logo {
     position: static;
