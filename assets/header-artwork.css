@@ -1,0 +1,18 @@
+/* Keep the homepage upload and quote actions together without crowding the logo. */
+@media (max-width: 1000px) {
+  .header__inner--artwork .header__logo {
+    position: static;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__inner--artwork .header__logo {
+    justify-content: center;
+  }
+  .header__inner--artwork .header__actions {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+}
