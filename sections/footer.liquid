@@ -37,6 +37,8 @@
         <ul class="footer__links">
           <li><a href="/pages/contact">Contact Us</a></li>
           <li><a href="/pages/contact">Get a Quote</a></li>
+          <li><a href="{% if pages['print-corrections'] != blank %}{{ pages['print-corrections'].url }}{% else %}{{ routes.root_url }}pages/contact?view=print-corrections{% endif %}">Print Corrections</a></li>
+          <li><a href="{% if pages['print-corrections'] != blank %}{{ pages['print-corrections'].url }}{% else %}{{ routes.root_url }}pages/contact?view=print-corrections{% endif %}#pay-correction">Pay £8 Correction Fee</a></li>
         </ul>
       </div>
 
@@ -55,12 +57,6 @@
 
     <div class="footer__bottom">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
-      <a href="{% if pages['print-corrections'] != blank %}{{ pages['print-corrections'].url }}{% else %}{{ routes.root_url }}pages/contact?view=print-corrections{% endif %}#pay-correction">Pay £8 Correction Fee</a>
-      {% if pages['print-corrections'] != blank %}
-        <a href="{{ pages['print-corrections'].url }}">Print Corrections</a>
-      {% else %}
-        <a href="{{ routes.root_url }}pages/contact?view=print-corrections">Print Corrections</a>
-      {% endif %}
     </div>
   </div>
 </footer>
