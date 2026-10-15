@@ -55,6 +55,7 @@
 
     <div class="footer__bottom">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      <a href="{% if pages['print-corrections'] != blank %}{{ pages['print-corrections'].url }}{% else %}{{ routes.root_url }}pages/contact?view=print-corrections{% endif %}#pay-correction">Pay £8 Correction Fee</a>
       {% if pages['print-corrections'] != blank %}
         <a href="{{ pages['print-corrections'].url }}">Print Corrections</a>
       {% else %}

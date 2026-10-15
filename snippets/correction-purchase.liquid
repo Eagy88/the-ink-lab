@@ -1,0 +1,18 @@
+{% assign correction_product = all_products['print-correction-fee'] %}
+{% assign correction_variant = correction_product.selected_or_first_available_variant %}
+{% if correction_product != blank and correction_variant.available %}
+  <div id="pay-correction" style="margin: 2rem 0;">
+    <h2>Pay your correction fee</h2>
+    <p>{{ correction_variant.price | money }} — no shipping charge for this service. Please contact us before purchasing.</p>
+    <form method="post" action="{{ routes.cart_add_url }}">
+      <input type="hidden" name="id" value="{{ correction_variant.id }}">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+      <div class="form-field">
+        <label for="correction-order-{{ section.id }}">Original order number</label>
+        <input id="correction-order-{{ section.id }}" class="input" type="text" name="properties[Original order number]" placeholder="e.g. #1001" maxlength="80" required>
+      </div>
+      <button type="submit" class="btn btn--primary btn--lg">Add correction fee to basket — {{ correction_variant.price | money }}</button>
+    </form>
+  </div>
+{% endif %}

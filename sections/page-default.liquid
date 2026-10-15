@@ -4,6 +4,9 @@
     <div class="page-body rte">
       {{ page.content }}
     </div>
+    {% if page.handle == 'print-corrections' %}
+      {% render 'correction-purchase' %}
+    {% endif %}
   </div>
 </div>
 
