@@ -55,6 +55,11 @@
 
     <div class="footer__bottom">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      {% if pages['print-corrections'] != blank %}
+        <a href="{{ pages['print-corrections'].url }}">Print Corrections</a>
+      {% else %}
+        <a href="{{ routes.root_url }}pages/contact?view=print-corrections">Print Corrections</a>
+      {% endif %}
     </div>
   </div>
 </footer>

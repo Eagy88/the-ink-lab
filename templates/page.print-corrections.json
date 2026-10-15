@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "print-corrections",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
